@@ -1005,6 +1005,183 @@ button { font-family: var(--font-body); }
 .reveal--delay-3 { transition-delay: 0.3s; }
 
 /* =========================================
+   Media Gallery
+   ========================================= */
+.gallery { background: var(--white); }
+
+/* Filter tabs */
+.gallery__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.gallery__filter {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.gallery__filter:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.gallery__filter--active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+/* Grid layout */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  gap: 0.875rem;
+}
+
+/* --- Item base --- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--surface-light);
+  cursor: pointer;
+  outline-offset: 3px;
+}
+
+/* Row 1: two large 16:9 video placeholders — each spans 3 columns */
+.gallery-item--large {
+  grid-column: span 3;
+}
+.gallery-item--large .gallery-item__media {
+  aspect-ratio: 16 / 9;
+}
+
+/* Row 2: three smaller image placeholders — each spans 2 columns */
+.gallery-item--small {
+  grid-column: span 2;
+}
+.gallery-item--small .gallery-item__media {
+  aspect-ratio: 4 / 3;
+}
+
+/* Row 3: one wide cinematic placeholder — spans all 6 columns */
+.gallery-item--cinematic {
+  grid-column: span 6;
+}
+.gallery-item--cinematic .gallery-item__media {
+  aspect-ratio: 21 / 6;
+}
+
+/* Media area (placeholder tint) */
+.gallery-item__media {
+  width: 100%;
+  background:
+    linear-gradient(135deg, var(--surface-light) 0%, var(--bg-light) 100%);
+  /* Subtle crosshatch to signal placeholder */
+  background-image:
+    linear-gradient(135deg, var(--border-light) 25%, transparent 25%),
+    linear-gradient(225deg, var(--border-light) 25%, transparent 25%),
+    linear-gradient(45deg,  var(--border-light) 25%, transparent 25%),
+    linear-gradient(315deg, var(--border-light) 25%, var(--surface-light) 25%);
+  background-size: 16px 16px;
+  transition: transform 0.5s var(--ease-out);
+}
+
+/* Hover: scale the media */
+.gallery-item:hover .gallery-item__media,
+.gallery-item:focus-visible .gallery-item__media {
+  transform: scale(1.035);
+}
+
+/* Overlay */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem 1.4rem;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(15,27,45,0.0) 40%,
+    rgba(15,27,45,0.75) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item__overlay,
+.gallery-item:focus-visible .gallery-item__overlay {
+  opacity: 1;
+}
+
+/* Play button (video items) */
+.gallery-item__play {
+  align-self: center;
+  margin: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.2s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.gallery-item:hover .gallery-item__play {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+/* Label / tag area */
+.gallery-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+.gallery-item__tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gallery-item__label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.3;
+}
+
+/* Items hidden by filter */
+.gallery-item--hidden {
+  display: none;
+}
+
+/* =========================================
    Responsive
    ========================================= */
 @media (max-width: 1024px) {
@@ -1015,6 +1192,13 @@ button { font-family: var(--font-body); }
 @media (max-width: 900px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .positioning__cols { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Gallery: collapse large items to full width, smalls to halves */
+  .gallery__grid { grid-template-columns: repeat(4, 1fr); }
+  .gallery-item--large    { grid-column: span 4; }
+  .gallery-item--small    { grid-column: span 2; }
+  .gallery-item--cinematic { grid-column: span 4; }
+  .gallery-item--cinematic .gallery-item__media { aspect-ratio: 16 / 5; }
 }
 
 @media (max-width: 768px) {
@@ -1027,6 +1211,16 @@ button { font-family: var(--font-body); }
   .pricing__grid { grid-template-columns: 1fr; }
   .hero__scroll-hint { display: none; }
   .section { padding-block: 4.5rem; }
+
+  /* Gallery: two-column, cinematic full width */
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item--large    { grid-column: span 2; }
+  .gallery-item--small    { grid-column: span 1; }
+  .gallery-item--cinematic { grid-column: span 2; }
+  .gallery-item--cinematic .gallery-item__media { aspect-ratio: 16 / 5; }
+
+  /* Always show overlay on touch */
+  .gallery-item__overlay { opacity: 1; }
 }
 
 @media (max-width: 600px) {
@@ -1037,6 +1231,13 @@ button { font-family: var(--font-body); }
   .contact__actions { flex-direction: column; }
   .contact__actions .btn { width: 100%; justify-content: center; }
   .footer__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+  /* Gallery: single column on small screens */
+  .gallery__grid { grid-template-columns: 1fr; }
+  .gallery-item--large,
+  .gallery-item--small,
+  .gallery-item--cinematic { grid-column: span 1; }
+  .gallery-item--cinematic .gallery-item__media { aspect-ratio: 16 / 7; }
 }
 
 /* =========================================

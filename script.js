@@ -97,6 +97,42 @@
   initReveal();
 
   // =========================================
+  // Gallery filter tabs
+  // =========================================
+  const filterBtns = document.querySelectorAll('.gallery__filter');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  if (filterBtns.length && galleryItems.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active tab state
+        filterBtns.forEach(b => {
+          b.classList.remove('gallery__filter--active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('gallery__filter--active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Show / hide items
+        galleryItems.forEach(item => {
+          const match = filter === 'alle' || item.dataset.category === filter;
+          item.classList.toggle('gallery-item--hidden', !match);
+        });
+      });
+    });
+
+    // Keyboard: arrow navigation between tabs
+    filterBtns.forEach((btn, i) => {
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') filterBtns[(i + 1) % filterBtns.length].focus();
+        if (e.key === 'ArrowLeft')  filterBtns[(i - 1 + filterBtns.length) % filterBtns.length].focus();
+      });
+    });
+  }
+
+  // =========================================
   // Legal modals
   // =========================================
   function openModal(id) {

@@ -424,6 +424,153 @@
     </section>
 
     <!-- ============================================================
+         MEDIA GALLERY
+    ============================================================ -->
+    <section class="gallery section" id="galerie" aria-labelledby="gallery-heading">
+      <div class="container">
+        <p class="section-label">Einblicke</p>
+        <h2 class="section-title" id="gallery-heading">So arbeiten wir.</h2>
+        <p class="section-body" style="margin-bottom: 2.75rem;">
+          Imagefilme, Erklärvideos und Einblicke in unsere Projekte.
+        </p>
+
+        <!-- Filter tabs -->
+        <div class="gallery__filters" role="tablist" aria-label="Galerie filtern">
+          <button class="gallery__filter gallery__filter--active" role="tab" aria-selected="true"  data-filter="alle">Alle</button>
+          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="imagefilm">Imagefilme</button>
+          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="erklaervideo">Erklärvideos</button>
+          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="referenz">Referenzen</button>
+          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="team">Team</button>
+        </div>
+
+        <!-- Gallery grid -->
+        <div class="gallery__grid" id="galleryGrid">
+
+          <!-- Row 1: two large video placeholders (16:9) -->
+          <div
+            class="gallery-item gallery-item--video gallery-item--large"
+            data-category="imagefilm"
+            data-src=""
+            data-video-src=""
+            aria-label="Imagevideo Placeholder 1"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__play" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Imagefilm</span>
+                <p class="gallery-item__label">[Projektname]</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item gallery-item--video gallery-item--large"
+            data-category="erklaervideo"
+            data-src=""
+            data-video-src=""
+            aria-label="Erklärvideo Placeholder"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__play" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Erklärvideo</span>
+                <p class="gallery-item__label">[Projektname]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: three smaller image placeholders -->
+          <div
+            class="gallery-item gallery-item--image gallery-item--small"
+            data-category="referenz"
+            data-src=""
+            data-video-src=""
+            aria-label="Referenz Placeholder 1"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Referenz</span>
+                <p class="gallery-item__label">[Projektname]</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item gallery-item--image gallery-item--small"
+            data-category="team"
+            data-src=""
+            data-video-src=""
+            aria-label="Team Placeholder"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Team</span>
+                <p class="gallery-item__label">[Name / Rolle]</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item gallery-item--image gallery-item--small"
+            data-category="referenz"
+            data-src=""
+            data-video-src=""
+            aria-label="Referenz Placeholder 2"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Referenz</span>
+                <p class="gallery-item__label">[Projektname]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: one wide cinematic placeholder -->
+          <div
+            class="gallery-item gallery-item--video gallery-item--cinematic"
+            data-category="imagefilm"
+            data-src=""
+            data-video-src=""
+            aria-label="Cinematic Placeholder"
+            tabindex="0"
+            role="button"
+          >
+            <div class="gallery-item__media"></div>
+            <div class="gallery-item__overlay">
+              <div class="gallery-item__play" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="gallery-item__info">
+                <span class="gallery-item__tag">Imagefilm</span>
+                <p class="gallery-item__label">[Projektname – Unterzeile]</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /gallery__grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
          CONTACT / CTA
     ============================================================ -->
     <section class="contact section" id="kontakt" aria-labelledby="contact-heading">

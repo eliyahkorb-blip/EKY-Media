@@ -1172,6 +1172,99 @@ button { font-family: var(--font-body); }
 .modal__close:hover { color: var(--navy); }
 
 /* =========================================
+   FAQ Accordion
+   ========================================= */
+.faq { background: var(--bg-light); }
+
+.faq__inner {
+  max-width: 760px;
+}
+
+.faq .section-title { margin-bottom: 3rem; }
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  /* No gap — borders overlap cleanly */
+}
+
+.faq-item {
+  border-top: 1px solid var(--border-light);
+}
+.faq-item:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Trigger button */
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+.faq-item__trigger:hover { color: var(--gold); }
+
+/* Active state */
+.faq-item--open .faq-item__trigger {
+  color: var(--gold);
+}
+.faq-item--open {
+  border-top-color: var(--gold);
+}
+
+/* Arrow icon */
+.faq-item__arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  transition: transform 0.3s var(--ease-out), color 0.2s;
+}
+.faq-item__trigger:hover .faq-item__arrow,
+.faq-item--open .faq-item__arrow {
+  color: var(--gold);
+}
+.faq-item--open .faq-item__arrow {
+  transform: rotate(180deg);
+}
+
+/* Panel — animated with max-height */
+.faq-item__panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s var(--ease-out);
+}
+/* When hidden attr is removed by JS the element is visible;
+   max-height is driven by JS setting inline style */
+.faq-item__panel[hidden] {
+  display: block;   /* override UA hidden so transition works */
+  max-height: 0 !important;
+  visibility: hidden;
+}
+.faq-item__panel:not([hidden]) {
+  visibility: visible;
+}
+
+.faq-item__panel p {
+  padding-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* =========================================
    WhatsApp Button
    ========================================= */
 .whatsapp-btn {

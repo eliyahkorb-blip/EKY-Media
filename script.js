@@ -133,6 +133,62 @@
   }
 
   // =========================================
+  // FAQ accordion
+  // =========================================
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  function openFaq(item) {
+    const panel = item.querySelector('.faq-item__panel');
+    const trigger = item.querySelector('.faq-item__trigger');
+    panel.removeAttribute('hidden');
+    // Set max-height to scrollHeight so CSS transition animates smoothly
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    trigger.setAttribute('aria-expanded', 'true');
+    item.classList.add('faq-item--open');
+  }
+
+  function closeFaq(item) {
+    const panel = item.querySelector('.faq-item__panel');
+    const trigger = item.querySelector('.faq-item__trigger');
+    panel.style.maxHeight = '0';
+    trigger.setAttribute('aria-expanded', 'false');
+    item.classList.remove('faq-item--open');
+    // Restore hidden after transition ends so it's properly inert
+    panel.addEventListener('transitionend', () => {
+      if (!item.classList.contains('faq-item--open')) {
+        panel.setAttribute('hidden', '');
+      }
+    }, { once: true });
+  }
+
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-item__trigger');
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('faq-item--open');
+
+      // Close all open items first
+      faqItems.forEach(i => {
+        if (i.classList.contains('faq-item--open')) closeFaq(i);
+      });
+
+      // Open clicked item only if it was closed
+      if (!isOpen) openFaq(item);
+    });
+
+    // Keyboard: Space/Enter already fire click on <button>;
+    // add Home/End navigation across triggers
+    trigger.addEventListener('keydown', e => {
+      const triggers = [...document.querySelectorAll('.faq-item__trigger')];
+      const idx = triggers.indexOf(trigger);
+      if (e.key === 'ArrowDown') { e.preventDefault(); triggers[Math.min(idx + 1, triggers.length - 1)].focus(); }
+      if (e.key === 'ArrowUp')   { e.preventDefault(); triggers[Math.max(idx - 1, 0)].focus(); }
+      if (e.key === 'Home')      { e.preventDefault(); triggers[0].focus(); }
+      if (e.key === 'End')       { e.preventDefault(); triggers[triggers.length - 1].focus(); }
+    });
+  });
+
+  // =========================================
   // Legal modals
   // =========================================
   function openModal(id) {

@@ -346,79 +346,200 @@
     </section>
 
     <!-- ============================================================
-         PRICING (teaser)
+         PRICING
     ============================================================ -->
     <section class="pricing section section--light" id="preise" aria-labelledby="pricing-heading">
       <div class="container">
         <p class="section-label">Investition</p>
         <h2 class="section-title" id="pricing-heading">Transparente Preise.<br />Zwei Modelle.</h2>
-        <p class="section-body" style="margin-bottom: 3.5rem;">
-          Kaufen Sie Ihre Website einmalig und kündigen monatlich – oder starten Sie
-          ohne Einrichtungsgebühr mit 24 Monaten Laufzeit.
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          Kaufen Sie Ihre Website einmalig und kündigen danach monatlich –
+          oder starten Sie ohne Einstiegsinvestition mit 24 Monaten Laufzeit.
+          Beide Modelle. Volle Transparenz. Keine Überraschungen.
         </p>
+
+        <!-- Model toggle legend -->
+        <div class="pricing__legend" aria-label="Erklärung der Zahlungsmodelle">
+          <div class="pricing__legend-item">
+            <span class="pricing__legend-dot pricing__legend-dot--kauf"></span>
+            <span><strong>Kaufmodell</strong> – einmalige Einrichtung, dann monatlich kündbar. Insgesamt günstiger.</span>
+          </div>
+          <div class="pricing__legend-item">
+            <span class="pricing__legend-dot pricing__legend-dot--laufzeit"></span>
+            <span><strong>Laufzeitmodell</strong> – 0 € Einstieg, 24 Monate Mindestlaufzeit, danach monatlich kündbar.</span>
+          </div>
+        </div>
+
+        <!-- Package cards -->
         <div class="pricing__grid">
 
+          <!-- BASIC -->
           <div class="pricing-card">
-            <p class="pricing-card__name">Starter</p>
+            <div class="pricing-card__top">
+              <p class="pricing-card__name">Basic</p>
+              <p class="pricing-card__tagline">Starker Einstieg.</p>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Moderne, individuelle Website</li>
+              <li>SEO-Basis-Optimierung</li>
+              <li>Google-Unternehmensprofil Einrichtung &amp; Optimierung</li>
+              <li>Saubere Grundstruktur für Conversion</li>
+            </ul>
             <div class="pricing-card__models">
-              <div class="pricing-model">
-                <span class="pricing-model__label">Kauf</span>
-                <span class="pricing-model__setup">2.200 € Einrichtung</span>
+              <div class="pricing-model pricing-model--kauf">
+                <span class="pricing-model__label">Kaufmodell</span>
+                <span class="pricing-model__setup">2.200 € einmalig</span>
                 <span class="pricing-model__monthly">149 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
               </div>
-              <div class="pricing-model">
-                <span class="pricing-model__label">Laufzeit</span>
-                <span class="pricing-model__setup">0 € Einrichtung</span>
-                <span class="pricing-model__monthly">399 €<small>/Monat</small></span>
+              <div class="pricing-model pricing-model--laufzeit">
+                <span class="pricing-model__label">Laufzeitmodell</span>
+                <span class="pricing-model__setup">0 € Einstieg</span>
+                <span class="pricing-model__monthly">250 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
               </div>
             </div>
+            <a href="#erstgespraech" class="btn btn--outline-navy pricing-card__btn">Jetzt anfragen</a>
           </div>
 
+          <!-- PROFESSIONAL (featured) -->
           <div class="pricing-card pricing-card--featured">
             <p class="pricing-card__badge">Empfohlen</p>
-            <p class="pricing-card__name">Professional</p>
+            <div class="pricing-card__top">
+              <p class="pricing-card__name">Professional</p>
+              <p class="pricing-card__tagline">Klarer Vorsprung.</p>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Hochwertigere, individuellere Website</li>
+              <li>Erweiterte Seitenstruktur &amp; mehr Möglichkeiten</li>
+              <li>Stärkere SEO-Optimierung</li>
+              <li>KI-Chatbot (24/7 Leadqualifizierung)</li>
+              <li>Verbesserte Conversion-Elemente</li>
+            </ul>
             <div class="pricing-card__models">
-              <div class="pricing-model">
-                <span class="pricing-model__label">Kauf</span>
-                <span class="pricing-model__setup">4.500 € Einrichtung</span>
-                <span class="pricing-model__monthly">299 €<small>/Monat</small></span>
+              <div class="pricing-model pricing-model--kauf">
+                <span class="pricing-model__label">Kaufmodell</span>
+                <span class="pricing-model__setup">4.500 € einmalig</span>
+                <span class="pricing-model__monthly">199 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
               </div>
-              <div class="pricing-model">
-                <span class="pricing-model__label">Laufzeit</span>
-                <span class="pricing-model__setup">0 € Einrichtung</span>
-                <span class="pricing-model__monthly">649 €<small>/Monat</small></span>
+              <div class="pricing-model pricing-model--laufzeit">
+                <span class="pricing-model__label">Laufzeitmodell</span>
+                <span class="pricing-model__setup">0 € Einstieg</span>
+                <span class="pricing-model__monthly">390 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
               </div>
             </div>
+            <a href="#erstgespraech" class="btn btn--gold pricing-card__btn">Jetzt anfragen</a>
           </div>
 
+          <!-- PREMIUM -->
           <div class="pricing-card">
-            <p class="pricing-card__name">Business</p>
+            <div class="pricing-card__top">
+              <p class="pricing-card__name">Premium</p>
+              <p class="pricing-card__tagline">Maximale Wirkung.</p>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Alles aus Professional</li>
+              <li>Unternehmensvideo (Basis)</li>
+              <li>Stärkere Markenwirkung &amp; Positionierung</li>
+              <li>Höherwertigeres Design &amp; Gestaltung</li>
+              <li>Mehr Individualisierung &amp; Tiefe</li>
+            </ul>
             <div class="pricing-card__models">
-              <div class="pricing-model">
-                <span class="pricing-model__label">Kauf</span>
-                <span class="pricing-model__setup">8.900 € Einrichtung</span>
-                <span class="pricing-model__monthly">549 €<small>/Monat</small></span>
+              <div class="pricing-model pricing-model--kauf">
+                <span class="pricing-model__label">Kaufmodell</span>
+                <span class="pricing-model__setup">9.000 € einmalig</span>
+                <span class="pricing-model__monthly">299 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
               </div>
-              <div class="pricing-model">
-                <span class="pricing-model__label">Laufzeit</span>
-                <span class="pricing-model__setup">0 € Einrichtung</span>
-                <span class="pricing-model__monthly">999 €<small>/Monat</small></span>
+              <div class="pricing-model pricing-model--laufzeit">
+                <span class="pricing-model__label">Laufzeitmodell</span>
+                <span class="pricing-model__setup">0 € Einstieg</span>
+                <span class="pricing-model__monthly">720 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
               </div>
             </div>
+            <a href="#erstgespraech" class="btn btn--outline-navy pricing-card__btn">Jetzt anfragen</a>
           </div>
 
+          <!-- ALL-IN-ONE -->
           <div class="pricing-card pricing-card--allinone">
-            <p class="pricing-card__name">All-in-One</p>
-            <p class="pricing-card__custom-note">
-              Individuelle Lösung auf Anfrage – ab 14.000 € / ab 699 € monatlich.
-            </p>
-            <a href="#kontakt" class="btn btn--gold" style="margin-top:1.5rem;">Anfrage senden</a>
+            <div class="pricing-card__top">
+              <p class="pricing-card__name">All-in-One</p>
+              <p class="pricing-card__tagline">Vollständige Außendarstellung.</p>
+            </div>
+            <ul class="pricing-card__features pricing-card__features--dark" role="list">
+              <li>Alles aus Premium</li>
+              <li>Hochwertiges Unternehmensvideo</li>
+              <li>3 Design-Anpassungen pro Jahr</li>
+              <li>Maximale Individualisierung</li>
+              <li>Stärkste SEO- &amp; GEO-Ausrichtung</li>
+              <li>Fokus auf Wachstum &amp; Performance</li>
+            </ul>
+            <div class="pricing-card__models">
+              <div class="pricing-model pricing-model--kauf pricing-model--dark">
+                <span class="pricing-model__label">Kaufmodell</span>
+                <span class="pricing-model__setup">14.000 € einmalig</span>
+                <span class="pricing-model__monthly">399 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
+              </div>
+              <div class="pricing-model pricing-model--laufzeit pricing-model--dark">
+                <span class="pricing-model__label">Laufzeitmodell</span>
+                <span class="pricing-model__setup">0 € Einstieg</span>
+                <span class="pricing-model__monthly">1.050 €<small>/Monat</small></span>
+                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
+              </div>
+            </div>
+            <a href="#erstgespraech" class="btn btn--gold pricing-card__btn">Jetzt anfragen</a>
           </div>
 
         </div>
+
+        <!-- Add-ons -->
+        <div class="pricing__addons">
+          <p class="pricing__addons-heading">
+            <span class="section-label" style="margin-bottom:0;">Einzelleistungen &amp; Erweiterungen</span>
+          </p>
+          <div class="pricing__addons-grid">
+
+            <div class="addon-card">
+              <p class="addon-card__name">Unternehmensvideo</p>
+              <p class="addon-card__price">ab 3.000 €</p>
+              <p class="addon-card__note">Je nach Aufwand und Umfang individuell kalkuliert.</p>
+            </div>
+
+            <div class="addon-card">
+              <p class="addon-card__name">KI Voice Agent</p>
+              <p class="addon-card__price">1.500 – 2.000 € Einrichtung</p>
+              <p class="addon-card__note">+ 150 – 250 €/Monat zzgl. nutzungsabhängiger Kosten.</p>
+            </div>
+
+            <div class="addon-card">
+              <p class="addon-card__name">KI-Angebots­automation</p>
+              <p class="addon-card__price">2.000 – 4.000 € Einrichtung</p>
+              <p class="addon-card__note">+ 200 – 400 €/Monat, optional nutzungsabhängig.</p>
+            </div>
+
+            <div class="addon-card">
+              <p class="addon-card__name">Branding &amp; CI</p>
+              <p class="addon-card__price">Logo ab 1.000 €</p>
+              <p class="addon-card__note">Vollständiges CI &amp; Branding: 3.000 – 5.000 €.</p>
+            </div>
+
+            <div class="addon-card">
+              <p class="addon-card__name">Print &amp; Offline-Werbung</p>
+              <p class="addon-card__price">ab 1.000 €</p>
+              <p class="addon-card__note">Individuell je nach Material, Umfang und Produktion.</p>
+            </div>
+
+          </div>
+        </div>
+
         <p class="pricing__note">
-          Alle Preise zzgl. MwSt. · Kauf-Modell: monatlich kündbar nach vollständiger Einrichtung ·
-          Laufzeit-Modell: 24 Monate, danach monatlich kündbar, keine Verlängerung.
+          Alle Preise zzgl. gesetzlicher MwSt. &middot;
+          Kaufmodell: monatlich kündbar nach vollständiger Einrichtung, kein Mindestvertrag &middot;
+          Laufzeitmodell: 24 Monate Mindestlaufzeit, danach monatlich kündbar, keine automatische Verlängerung.
         </p>
       </div>
     </section>

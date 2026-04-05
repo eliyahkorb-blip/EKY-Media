@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKY Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">EKY Media</a>
+      <nav class="nav__links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav__cta">Get in Touch</button>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mobile-menu__cta">Get in Touch</a>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Creative Media Agency</p>
+        <h1 class="hero__headline">
+          Stories that <span class="gradient-text">move</span><br />people forward.
+        </h1>
+        <p class="hero__sub">
+          We craft compelling media experiences — from brand strategy and video production
+          to digital campaigns that drive real results.
+        </p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">View Our Work</a>
+          <a href="#contact" class="btn btn--ghost">Start a Project</a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-label">About EKY Media</div>
+        <h2 class="section-title">We are a full-service<br />media production studio.</h2>
+        <p class="section-body">
+          Founded with a passion for purposeful storytelling, EKY Media brings together
+          strategy, creativity, and cutting-edge production to help brands connect with
+          the audiences that matter most.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Services</h2>
+        <div class="services__grid">
+          <div class="service-card">
+            <div class="service-card__icon">&#9654;</div>
+            <h3>Video Production</h3>
+            <p>End-to-end video creation from concept and script to final delivery.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__icon">&#9670;</div>
+            <h3>Brand Strategy</h3>
+            <p>Positioning, identity, and messaging that sets you apart from the noise.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__icon">&#9675;</div>
+            <h3>Digital Campaigns</h3>
+            <p>Multi-platform campaigns designed to reach, engage, and convert.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__icon">&#9632;</div>
+            <h3>Content Creation</h3>
+            <p>Photography, copywriting, and social content built for modern audiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Portfolio Teaser -->
+    <section class="work section" id="work">
+      <div class="container">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Selected Work</h2>
+        <div class="work__grid">
+          <div class="work-item work-item--tall">
+            <div class="work-item__inner">
+              <span class="work-item__tag">Brand Film</span>
+              <h3 class="work-item__title">Project Name</h3>
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="work-item__inner">
+              <span class="work-item__tag">Campaign</span>
+              <h3 class="work-item__title">Project Name</h3>
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="work-item__inner">
+              <span class="work-item__tag">Photography</span>
+              <h3 class="work-item__title">Project Name</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <div class="section-label">Let's Talk</div>
+        <h2 class="section-title">Ready to create<br />something great?</h2>
+        <p class="section-body">
+          Tell us about your project and we'll be in touch within one business day.
+        </p>
+        <a href="mailto:hello@ekymedia.com" class="btn btn--primary">hello@ekymedia.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">EKY Media</span>
+      <span class="footer__copy">&copy; 2026 EKY Media. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

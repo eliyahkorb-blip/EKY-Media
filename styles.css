@@ -836,6 +836,213 @@ button { font-family: var(--font-body); }
 }
 
 /* =========================================
+   Booking / Consultation
+   ========================================= */
+.booking {
+  background: var(--navy-dark);
+}
+
+.booking__inner {
+  max-width: 800px;
+  text-align: center;
+}
+
+.booking .section-label { color: var(--gold); }
+
+.booking .section-title {
+  color: #fff;
+  margin-inline: auto;
+}
+.booking .section-title em { color: var(--gold); }
+
+.booking__subtext {
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+}
+
+/* --- 3-step process --- */
+.booking__steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  list-style: none;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.booking-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 200px;
+  position: relative;
+}
+
+/* Horizontal connector line between steps */
+.booking-step__connector {
+  position: absolute;
+  top: 28px; /* vertically centered on icon */
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(196,146,58,0.4), rgba(196,146,58,0.15));
+}
+.booking-step__connector--last { display: none; }
+
+.booking-step__icon {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition: background 0.25s, border-color 0.25s, transform 0.25s var(--ease-out);
+}
+.booking-step:hover .booking-step__icon {
+  background: rgba(196,146,58,0.12);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.booking-step__number {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.25);
+}
+
+.booking-step__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.3;
+}
+
+/* --- CTA area --- */
+.booking__cta-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Calendly placeholder */
+.booking__calendly-placeholder {
+  width: 100%;
+  border: 1px dashed rgba(255,255,255,0.15);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.03);
+  padding: 3rem 2rem;
+  transition: border-color 0.25s, background 0.25s;
+}
+.booking__calendly-placeholder:hover {
+  border-color: rgba(196,146,58,0.4);
+  background: rgba(196,146,58,0.04);
+}
+
+.booking__calendly-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.booking__calendly-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.3);
+}
+
+.booking__calendly-hint {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.18);
+}
+.booking__calendly-hint code {
+  font-family: 'Courier New', monospace;
+  color: rgba(196,146,58,0.5);
+  background: rgba(196,146,58,0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* Primary button */
+.booking__primary-btn {
+  font-size: 1rem;
+  padding: 1rem 2.75rem;
+  letter-spacing: 0.03em;
+}
+
+/* Secondary row */
+.booking__secondary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.booking__whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+.booking__whatsapp-link:hover { color: #25D366; }
+
+.booking__divider {
+  color: rgba(255,255,255,0.2);
+  font-size: 1rem;
+}
+
+.booking__phone-link {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+.booking__phone-link:hover { color: rgba(255,255,255,0.85); }
+
+/* --- Trust strip --- */
+.booking__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2.5rem;
+  list-style: none;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.booking__trust li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.booking__trust-icon {
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================================
    Contact / CTA
    ========================================= */
 .contact {
@@ -1356,6 +1563,18 @@ button { font-family: var(--font-body); }
   .hero__scroll-hint { display: none; }
   .section { padding-block: 4.5rem; }
 
+  /* Booking: stack steps vertically */
+  .booking__steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .booking-step { max-width: 100%; flex-direction: row; text-align: left; gap: 1.25rem; }
+  .booking-step__connector { display: none; }
+  .booking-step__number { order: -1; min-width: 2rem; }
+  .booking__secondary { flex-direction: column; gap: 0.75rem; }
+  .booking__trust { gap: 0.75rem 1.5rem; }
+
   /* Gallery: two-column, cinematic full width */
   .gallery__grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-item--large    { grid-column: span 2; }
@@ -1371,6 +1590,7 @@ button { font-family: var(--font-body); }
   .services__grid { grid-template-columns: 1fr; }
   .industries__grid { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; }
+  .booking__primary-btn { width: 100%; }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; }
   .contact__actions { flex-direction: column; }

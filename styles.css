@@ -1085,6 +1085,14 @@ button { font-family: var(--font-body); }
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+/* Calendly inline widget */
+.calendly-inline-widget {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 /* Calendly placeholder */
@@ -1860,6 +1868,21 @@ button { font-family: var(--font-body); }
   .gallery-item--small,
   .gallery-item--cinematic { grid-column: span 1; }
   .gallery-item--cinematic .gallery-item__media { aspect-ratio: 16 / 7; }
+}
+
+/* Calendly widget responsive */
+@media (min-width: 768px) {
+  .calendly-inline-widget {
+    min-width: 100% !important;
+    height: 650px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .calendly-inline-widget {
+    min-width: 320px !important;
+    height: 700px !important;
+  }
 }
 
 /* =========================================

@@ -1319,6 +1319,18 @@ button { font-family: var(--font-body); }
 }
 .modal__close:hover { color: var(--navy); }
 
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+.modal__content p strong { color: var(--navy); }
+.modal__content a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.modal__content a:hover { color: var(--navy); }
+
 /* =========================================
    FAQ Accordion
    ========================================= */

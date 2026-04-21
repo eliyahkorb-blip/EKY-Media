@@ -1,1174 +1,1263 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EKY Media GbR – Wir bauen Unternehmen, die verkaufen.</title>
-  <meta name="description" content="EKY Media GbR – Custom-Websites, KI-Integration und lokales SEO für Handwerker, Zahnarztpraxen und Mittelstand in Würzburg, Regensburg und ganz Bayern." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EKY Media — Websites &amp; KI-Systeme für Bayern</title>
+  <meta name="description" content="EKY Media GbR – Custom-Websites, KI-Integration und Voice Agents für Handwerker, Zahnarztpraxen und Mittelstand in Würzburg, Regensburg und ganz Bayern."/>
+  <link rel="stylesheet" href="ek-styles.css"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <!-- Tweaks defaults -->
+  <script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accentColor": "#c49035",
+    "darkHero": true,
+    "showWaveform": true
+  }/*EDITMODE-END*/;
+  </script>
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Tweaks panel */
+    #tweaks-panel { position:fixed;bottom:1.5rem;left:1.5rem;z-index:9000;background:rgba(7,11,20,.96);border:1px solid rgba(196,144,53,.3);border-radius:8px;padding:1.25rem 1.5rem;width:260px;display:none;backdrop-filter:blur(16px); }
+    #tweaks-panel h4 { font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#C49035;margin-bottom:1rem; }
+    #tweaks-panel label { display:flex;align-items:center;justify-content:space-between;font-size:.82rem;color:rgba(238,242,250,.7);margin-bottom:.85rem; }
+    #tweaks-panel input[type=color] { width:32px;height:22px;border:none;border-radius:3px;cursor:pointer;background:none; }
+    #tweaks-panel input[type=checkbox] { width:16px;height:16px;cursor:pointer;accent-color:#C49035; }
+  </style>
 </head>
 <body>
 
-  <!-- Skip link (accessibility) -->
-  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+<a href="#main" class="skip">Zum Inhalt springen</a>
 
-  <!-- Navigation -->
-  <header class="nav" id="nav" role="banner">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo" aria-label="EKY Media – Startseite">
-        EKY <span>Media</span>
-      </a>
-      <nav class="nav__links" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#branchen">Branchen</a>
-        <a href="#preise">Preise</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a href="#kontakt" class="nav__cta btn btn--gold">Erstgespräch buchen</a>
-      <button class="nav__hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobilmenü">
-    <nav>
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="EKY Media – Startseite">EKY <span>Media</span></a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#branchen">Branchen</a>
       <a href="#preise">Preise</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="#kontakt" class="mobile-menu__cta">Erstgespräch buchen</a>
     </nav>
+    <a href="#kontakt" class="btn btn-gold nav-cta">Erstgespräch buchen</a>
+    <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-
-  <main id="main">
-
-    <!-- ============================================================
-         HERO
-    ============================================================ -->
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
-      <div class="hero__bg" aria-hidden="true"></div>
-
-      <div class="hero__content container">
-        <p class="hero__eyebrow">
-          <span class="hero__dot" aria-hidden="true"></span>
-          Digitalagentur · Würzburg &amp; Regensburg
-        </p>
-        <h1 class="hero__headline" id="hero-heading">
-          Wir bauen Unternehmen,<br />
-          <em>die verkaufen.</em>
-        </h1>
-        <p class="hero__sub">
-          Maßgeschneiderte Websites, KI-Integration und lokales SEO –
-          für Handwerker, Praxen und Mittelstand in Bayern.
-          Kein Baukastensystem. Keine Templates. Nur Ergebnisse.
-        </p>
-        <div class="hero__actions">
-          <a href="#kontakt" class="btn btn--gold">Kostenloses Erstgespräch</a>
-          <a href="#leistungen" class="btn btn--outline-light">Leistungen ansehen</a>
-        </div>
-        <div class="hero__badges" aria-label="Standorte und Merkmale">
-          <span class="badge">Würzburg</span>
-          <span class="badge">Regensburg</span>
-          <span class="badge">DSGVO-konform</span>
-          <span class="badge">Keine Bindung nach Kauf</span>
-        </div>
-      </div>
-
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         POSITIONING / WHY EKY
-    ============================================================ -->
-    <section class="positioning section" id="positioning" aria-labelledby="positioning-heading">
-      <div class="container">
-        <p class="section-label">Warum EKY Media</p>
-        <h2 class="section-title" id="positioning-heading">
-          Kein Baukastensystem.<br />
-          Keine Templates.<br />
-          Nur echte Ergebnisse.
-        </h2>
-        <div class="positioning__cols">
-          <p class="section-body">
-            Während andere Agenturen vorgefertigte Themes und Page-Builder nutzen,
-            bauen wir jede Website von Grund auf – sauber im Code, schnell im Browser,
-            stark im Ranking.
-          </p>
-          <ul class="positioning__list" role="list">
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              Custom-Development – kein WordPress-Template
-            </li>
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              KI-Integration vom ersten Tag an
-            </li>
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              SEO + GEO für lokale Sichtbarkeit
-            </li>
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              Transparente Preise – keine versteckten Kosten
-            </li>
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              Max. 24 Monate Laufzeit oder monatlich kündbar nach Kauf
-            </li>
-            <li>
-              <span class="positioning__check" aria-hidden="true">✓</span>
-              DSGVO-bewusst von Anfang an
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SERVICES
-    ============================================================ -->
-    <section class="services section section--light" id="leistungen" aria-labelledby="services-heading">
-      <div class="container">
-        <p class="section-label">Was wir tun</p>
-        <h2 class="section-title" id="services-heading">Unsere Leistungen</h2>
-        <p class="section-body" style="margin-bottom: 3.5rem;">
-          Von der ersten Idee bis zum laufenden Betrieb – alles aus einer Hand.
-        </p>
-        <div class="services__grid">
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">01</div>
-            <h3>Custom Website</h3>
-            <p>Maßgeschneidert entwickelt, schnell geladen, für Suchmaschinen optimiert. Kein Theme, kein Baukastensystem.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">02</div>
-            <h3>SEO + GEO</h3>
-            <p>Lokale Sichtbarkeit in Würzburg, Regensburg und Bayern. Technisches SEO trifft generative Suchoptimierung.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">03</div>
-            <h3>Google Business</h3>
-            <p>Vollständige Optimierung Ihres Google-Unternehmensprofils für mehr Anrufe und Laufkundschaft.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">04</div>
-            <h3>KI-Chatbot</h3>
-            <p>24/7 Kundenbetreuung, Leadqualifizierung und Terminbuchung – vollautomatisiert auf Ihrer Website.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">05</div>
-            <h3>KI-Angebotsschreiber</h3>
-            <p>Angebote in Minuten statt Stunden. Der KI-Assistent erstellt professionelle Angebote auf Knopfdruck.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">06</div>
-            <h3>Voice Agent</h3>
-            <p>Ihr KI-Telefonsekretär – nimmt Anrufe entgegen, qualifiziert Anfragen und leitet weiter.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">07</div>
-            <h3>Branding &amp; CI</h3>
-            <p>Logo, Farben, Schriften und Markenwelt – ein konsistenter Auftritt, der Vertrauen schafft.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">08</div>
-            <h3>Imagevideo &amp; Print</h3>
-            <p>Professionelle Unternehmensvideos und hochwertige Druckmaterialien für einen starken ersten Eindruck.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__number" aria-hidden="true">09</div>
-            <h3>CRM &amp; Automatisierung</h3>
-            <p>Workflows, die Arbeit abnehmen: CRM-Setup, E-Mail-Automation und Prozessoptimierung.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         INDUSTRIES
-    ============================================================ -->
-    <section class="industries section" id="branchen" aria-labelledby="industries-heading">
-      <div class="container">
-        <p class="section-label">Wen wir bedienen</p>
-        <h2 class="section-title" id="industries-heading">Branchen, die<br />wir kennen.</h2>
-        <div class="industries__grid">
-          <div class="industry-item">
-            <span class="industry-item__number" aria-hidden="true">01</span>
-            <h3>Handwerksbetriebe</h3>
-            <p>Elektriker, Installateure, Maler, Tischler – mehr Aufträge durch lokale Sichtbarkeit.</p>
-          </div>
-          <div class="industry-item">
-            <span class="industry-item__number" aria-hidden="true">02</span>
-            <h3>Zahnarztpraxen &amp; Dentallabore</h3>
-            <p>Patientengewinnung, Online-Terminbuchung und professioneller Webauftritt für Mediziner.</p>
-          </div>
-          <div class="industry-item">
-            <span class="industry-item__number" aria-hidden="true">03</span>
-            <h3>Gastronomie &amp; Hotellerie</h3>
-            <p>Reservierungssysteme, Google-Optimierung und digitale Speisekarten, die konvertieren.</p>
-          </div>
-          <div class="industry-item">
-            <span class="industry-item__number" aria-hidden="true">04</span>
-            <h3>Mittelstand &amp; B2B</h3>
-            <p>Professionelle Lead-Generierung und Unternehmensauftritte für etablierte Firmen.</p>
-          </div>
-          <div class="industry-item">
-            <span class="industry-item__number" aria-hidden="true">05</span>
-            <h3>Lokale Dienstleister</h3>
-            <p>Steuerberater, Rechtsanwälte, Coaches – Vertrauen digital aufbauen und Mandate gewinnen.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         COMPARISON
-    ============================================================ -->
-    <section class="comparison section section--light" id="vergleich" aria-labelledby="comparison-heading">
-      <div class="container">
-        <p class="section-label">EKY Media vs. andere Anbieter</p>
-        <h2 class="section-title" id="comparison-heading">Was uns unterscheidet.</h2>
-
-        <div class="comparison__grid">
-
-          <!-- Left: other agencies -->
-          <div class="comparison-card comparison-card--other" aria-label="Andere Agenturen">
-            <div class="comparison-card__header">
-              <span class="comparison-card__icon" aria-hidden="true">✕</span>
-              <h3>Andere Agenturen</h3>
-            </div>
-            <ul class="comparison-list" role="list">
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                36–48 Monate Vertragsbindung
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Hohe Einmalgebühren
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Kein KI-System
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Kein Voice Agent, kein KI-Chatbot
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Keine Transparenz bei Preisen
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Anonymer Support
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Generische Templates
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--bad" aria-hidden="true">✕</span>
-                Keine messbaren Ergebnisse
-              </li>
-            </ul>
-          </div>
-
-          <!-- Right: EKY Media -->
-          <div class="comparison-card comparison-card--eky" aria-label="EKY Media">
-            <div class="comparison-card__header">
-              <span class="comparison-card__icon" aria-hidden="true">✓</span>
-              <h3>EKY Media</h3>
-            </div>
-            <ul class="comparison-list" role="list">
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                Max. 24 Monate oder monatlich kündbar nach Kauf
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                0 EUR Einstieg möglich
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                KI-Chatbot, KI-Angebotsschreiber, Voice Agent
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                24/7 Erreichbarkeit durch KI-Systeme
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                Transparente Preise
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                Persönlicher Ansprechpartner
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                Individuell für die Branche
-              </li>
-              <li>
-                <span class="comparison-list__marker comparison-list__marker--good" aria-hidden="true">✓</span>
-                Monatliches Reporting
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="comparison__cta">
-          <a href="#kontakt" class="btn btn--gold">Jetzt Erstgespräch buchen</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         PRICING
-    ============================================================ -->
-    <section class="pricing section section--light" id="preise" aria-labelledby="pricing-heading">
-      <div class="container">
-        <p class="section-label">Investition</p>
-        <h2 class="section-title" id="pricing-heading">Transparente Preise.<br />Zwei Modelle.</h2>
-        <p class="section-body" style="margin-bottom: 1.5rem;">
-          Kaufen Sie Ihre Website einmalig und kündigen danach monatlich –
-          oder starten Sie ohne Einstiegsinvestition mit 24 Monaten Laufzeit.
-          Beide Modelle. Volle Transparenz. Keine Überraschungen.
-        </p>
-
-        <!-- Model toggle legend -->
-        <div class="pricing__legend" aria-label="Erklärung der Zahlungsmodelle">
-          <div class="pricing__legend-item">
-            <span class="pricing__legend-dot pricing__legend-dot--kauf"></span>
-            <span><strong>Kaufmodell</strong> – einmalige Einrichtung, dann monatlich kündbar. Insgesamt günstiger.</span>
-          </div>
-          <div class="pricing__legend-item">
-            <span class="pricing__legend-dot pricing__legend-dot--laufzeit"></span>
-            <span><strong>Laufzeitmodell</strong> – 0 € Einstieg, 24 Monate Mindestlaufzeit, danach monatlich kündbar.</span>
-          </div>
-        </div>
-
-        <!-- Package cards -->
-        <div class="pricing__grid">
-
-          <!-- BASIC -->
-          <div class="pricing-card">
-            <div class="pricing-card__top">
-              <p class="pricing-card__name">Basic</p>
-              <p class="pricing-card__tagline">Starker Einstieg.</p>
-            </div>
-            <ul class="pricing-card__features" role="list">
-              <li>Moderne, individuelle Website</li>
-              <li>SEO-Basis-Optimierung</li>
-              <li>Google-Unternehmensprofil Einrichtung &amp; Optimierung</li>
-              <li>Saubere Grundstruktur für Conversion</li>
-            </ul>
-            <div class="pricing-card__models">
-              <div class="pricing-model pricing-model--kauf">
-                <span class="pricing-model__label">Kaufmodell</span>
-                <span class="pricing-model__setup">2.200 € einmalig</span>
-                <span class="pricing-model__monthly">149 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
-              </div>
-              <div class="pricing-model pricing-model--laufzeit">
-                <span class="pricing-model__label">Laufzeitmodell</span>
-                <span class="pricing-model__setup">0 € Einstieg</span>
-                <span class="pricing-model__monthly">250 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
-              </div>
-            </div>
-            <a href="#erstgespraech" class="btn btn--outline-navy pricing-card__btn">Jetzt anfragen</a>
-          </div>
-
-          <!-- PROFESSIONAL (featured) -->
-          <div class="pricing-card pricing-card--featured">
-            <p class="pricing-card__badge">Empfohlen</p>
-            <div class="pricing-card__top">
-              <p class="pricing-card__name">Professional</p>
-              <p class="pricing-card__tagline">Klarer Vorsprung.</p>
-            </div>
-            <ul class="pricing-card__features" role="list">
-              <li>Hochwertigere, individuellere Website</li>
-              <li>Erweiterte Seitenstruktur &amp; mehr Möglichkeiten</li>
-              <li>Stärkere SEO-Optimierung</li>
-              <li>KI-Chatbot (24/7 Leadqualifizierung)</li>
-              <li>Verbesserte Conversion-Elemente</li>
-            </ul>
-            <div class="pricing-card__models">
-              <div class="pricing-model pricing-model--kauf">
-                <span class="pricing-model__label">Kaufmodell</span>
-                <span class="pricing-model__setup">4.500 € einmalig</span>
-                <span class="pricing-model__monthly">199 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
-              </div>
-              <div class="pricing-model pricing-model--laufzeit">
-                <span class="pricing-model__label">Laufzeitmodell</span>
-                <span class="pricing-model__setup">0 € Einstieg</span>
-                <span class="pricing-model__monthly">390 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
-              </div>
-            </div>
-            <a href="#erstgespraech" class="btn btn--gold pricing-card__btn">Jetzt anfragen</a>
-          </div>
-
-          <!-- PREMIUM -->
-          <div class="pricing-card">
-            <div class="pricing-card__top">
-              <p class="pricing-card__name">Premium</p>
-              <p class="pricing-card__tagline">Maximale Wirkung.</p>
-            </div>
-            <ul class="pricing-card__features" role="list">
-              <li>Alles aus Professional</li>
-              <li>Unternehmensvideo (Basis)</li>
-              <li>Stärkere Markenwirkung &amp; Positionierung</li>
-              <li>Höherwertigeres Design &amp; Gestaltung</li>
-              <li>Mehr Individualisierung &amp; Tiefe</li>
-            </ul>
-            <div class="pricing-card__models">
-              <div class="pricing-model pricing-model--kauf">
-                <span class="pricing-model__label">Kaufmodell</span>
-                <span class="pricing-model__setup">9.000 € einmalig</span>
-                <span class="pricing-model__monthly">299 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
-              </div>
-              <div class="pricing-model pricing-model--laufzeit">
-                <span class="pricing-model__label">Laufzeitmodell</span>
-                <span class="pricing-model__setup">0 € Einstieg</span>
-                <span class="pricing-model__monthly">720 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
-              </div>
-            </div>
-            <a href="#erstgespraech" class="btn btn--outline-navy pricing-card__btn">Jetzt anfragen</a>
-          </div>
-
-          <!-- ALL-IN-ONE -->
-          <div class="pricing-card pricing-card--allinone">
-            <div class="pricing-card__top">
-              <p class="pricing-card__name">All-in-One</p>
-              <p class="pricing-card__tagline">Vollständige Außendarstellung.</p>
-            </div>
-            <ul class="pricing-card__features pricing-card__features--dark" role="list">
-              <li>Alles aus Premium</li>
-              <li>Hochwertiges Unternehmensvideo</li>
-              <li>3 Design-Anpassungen pro Jahr</li>
-              <li>Maximale Individualisierung</li>
-              <li>Stärkste SEO- &amp; GEO-Ausrichtung</li>
-              <li>Fokus auf Wachstum &amp; Performance</li>
-            </ul>
-            <div class="pricing-card__models">
-              <div class="pricing-model pricing-model--kauf pricing-model--dark">
-                <span class="pricing-model__label">Kaufmodell</span>
-                <span class="pricing-model__setup">14.000 € einmalig</span>
-                <span class="pricing-model__monthly">399 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">monatlich kündbar nach Einrichtung</span>
-              </div>
-              <div class="pricing-model pricing-model--laufzeit pricing-model--dark">
-                <span class="pricing-model__label">Laufzeitmodell</span>
-                <span class="pricing-model__setup">0 € Einstieg</span>
-                <span class="pricing-model__monthly">1.050 €<small>/Monat</small></span>
-                <span class="pricing-model__hint">24 Monate, danach monatlich kündbar</span>
-              </div>
-            </div>
-            <a href="#erstgespraech" class="btn btn--gold pricing-card__btn">Jetzt anfragen</a>
-          </div>
-
-        </div>
-
-        <!-- Add-ons -->
-        <div class="pricing__addons">
-          <p class="pricing__addons-heading">
-            <span class="section-label" style="margin-bottom:0;">Einzelleistungen &amp; Erweiterungen</span>
-          </p>
-          <div class="pricing__addons-grid">
-
-            <div class="addon-card">
-              <p class="addon-card__name">Unternehmensvideo</p>
-              <p class="addon-card__price">ab 3.000 €</p>
-              <p class="addon-card__note">Je nach Aufwand und Umfang individuell kalkuliert.</p>
-            </div>
-
-            <div class="addon-card">
-              <p class="addon-card__name">KI Voice Agent</p>
-              <p class="addon-card__price">1.500 – 2.000 € Einrichtung</p>
-              <p class="addon-card__note">+ 150 – 250 €/Monat zzgl. nutzungsabhängiger Kosten.</p>
-            </div>
-
-            <div class="addon-card">
-              <p class="addon-card__name">KI-Angebots­automation</p>
-              <p class="addon-card__price">2.000 – 4.000 € Einrichtung</p>
-              <p class="addon-card__note">+ 200 – 400 €/Monat, optional nutzungsabhängig.</p>
-            </div>
-
-            <div class="addon-card">
-              <p class="addon-card__name">Branding &amp; CI</p>
-              <p class="addon-card__price">Logo ab 1.000 €</p>
-              <p class="addon-card__note">Vollständiges CI &amp; Branding: 3.000 – 5.000 €.</p>
-            </div>
-
-            <div class="addon-card">
-              <p class="addon-card__name">Print &amp; Offline-Werbung</p>
-              <p class="addon-card__price">ab 1.000 €</p>
-              <p class="addon-card__note">Individuell je nach Material, Umfang und Produktion.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <p class="pricing__note">
-          Alle Preise zzgl. gesetzlicher MwSt. &middot;
-          Kaufmodell: monatlich kündbar nach vollständiger Einrichtung, kein Mindestvertrag &middot;
-          Laufzeitmodell: 24 Monate Mindestlaufzeit, danach monatlich kündbar, keine automatische Verlängerung.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         MEDIA GALLERY
-    ============================================================ -->
-    <section class="gallery section" id="galerie" aria-labelledby="gallery-heading">
-      <div class="container">
-        <p class="section-label">Einblicke</p>
-        <h2 class="section-title" id="gallery-heading">So arbeiten wir.</h2>
-        <p class="section-body" style="margin-bottom: 2.75rem;">
-          Imagefilme, Erklärvideos und Einblicke in unsere Projekte.
-        </p>
-
-        <!-- Filter tabs -->
-        <div class="gallery__filters" role="tablist" aria-label="Galerie filtern">
-          <button class="gallery__filter gallery__filter--active" role="tab" aria-selected="true"  data-filter="alle">Alle</button>
-          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="imagefilm">Imagefilme</button>
-          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="erklaervideo">Erklärvideos</button>
-          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="referenz">Referenzen</button>
-          <button class="gallery__filter" role="tab" aria-selected="false" data-filter="team">Team</button>
-        </div>
-
-        <!-- Gallery grid -->
-        <div class="gallery__grid" id="galleryGrid">
-
-          <!-- Row 1: two large video placeholders (16:9) -->
-          <div
-            class="gallery-item gallery-item--video gallery-item--large"
-            data-category="imagefilm"
-            data-src=""
-            data-video-src=""
-            aria-label="Imagevideo Placeholder 1"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__play" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Imagefilm</span>
-                <p class="gallery-item__label">[Projektname]</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item gallery-item--video gallery-item--large"
-            data-category="erklaervideo"
-            data-src=""
-            data-video-src=""
-            aria-label="Erklärvideo Placeholder"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__play" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Erklärvideo</span>
-                <p class="gallery-item__label">[Projektname]</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 2: three smaller image placeholders -->
-          <div
-            class="gallery-item gallery-item--image gallery-item--small"
-            data-category="referenz"
-            data-src=""
-            data-video-src=""
-            aria-label="Referenz Placeholder 1"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Referenz</span>
-                <p class="gallery-item__label">[Projektname]</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item gallery-item--image gallery-item--small"
-            data-category="team"
-            data-src=""
-            data-video-src=""
-            aria-label="Team Placeholder"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Team</span>
-                <p class="gallery-item__label">[Name / Rolle]</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item gallery-item--image gallery-item--small"
-            data-category="referenz"
-            data-src=""
-            data-video-src=""
-            aria-label="Referenz Placeholder 2"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Referenz</span>
-                <p class="gallery-item__label">[Projektname]</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3: one wide cinematic placeholder -->
-          <div
-            class="gallery-item gallery-item--video gallery-item--cinematic"
-            data-category="imagefilm"
-            data-src=""
-            data-video-src=""
-            aria-label="Cinematic Placeholder"
-            tabindex="0"
-            role="button"
-          >
-            <div class="gallery-item__media"></div>
-            <div class="gallery-item__overlay">
-              <div class="gallery-item__play" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="gallery-item__info">
-                <span class="gallery-item__tag">Imagefilm</span>
-                <p class="gallery-item__label">[Projektname – Unterzeile]</p>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /gallery__grid -->
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TEAM
-    ============================================================ -->
-    <section class="team section section--light" id="team" aria-labelledby="team-heading">
-      <div class="container">
-        <p class="section-label">Das Team</p>
-        <h2 class="section-title" id="team-heading">Drei Gründer. Eine Mission.</h2>
-        <p class="section-body" style="margin-bottom: 3.5rem;">
-          Junges Team aus Bayern — mit der Energie eines Startups und dem Anspruch einer etablierten Agentur.
-        </p>
-
-        <div class="team__grid">
-
-          <!-- Card 1 -->
-          <article class="team-card" aria-label="Eliyah Korb">
-            <div class="team-card__image" aria-hidden="true">
-              <span class="team-card__initials">EK</span>
-            </div>
-            <div class="team-card__body">
-              <div class="team-card__meta">
-                <h3 class="team-card__name">Eliyah Korb</h3>
-                <p class="team-card__role">Vertrieb &amp; Business Development</p>
-                <p class="team-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Würzburg
-                </p>
-              </div>
-              <p class="team-card__bio">
-                [Kurze Beschreibung: Hintergrund und Expertise von Eliyah.]
-                [Zweiter Satz: Was Eliyah zum Team beisteuert.]
-              </p>
-              <div class="team-card__links">
-                <a href="#" class="team-card__social" aria-label="LinkedIn-Profil von Eliyah Korb" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="team-card" aria-label="Emily Weigl">
-            <div class="team-card__image" aria-hidden="true">
-              <span class="team-card__initials">EW</span>
-            </div>
-            <div class="team-card__body">
-              <div class="team-card__meta">
-                <h3 class="team-card__name">Emily Weigl</h3>
-                <p class="team-card__role">KI &amp; Automatisierung</p>
-                <p class="team-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Regensburg
-                </p>
-              </div>
-              <p class="team-card__bio">
-                [Kurze Beschreibung: Hintergrund und Expertise von Emily.]
-                [Zweiter Satz: Was Emily zum Team beisteuert.]
-              </p>
-              <div class="team-card__links">
-                <a href="#" class="team-card__social" aria-label="LinkedIn-Profil von Emily Weigl" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="team-card" aria-label="Karim Goß">
-            <div class="team-card__image" aria-hidden="true">
-              <span class="team-card__initials">KG</span>
-            </div>
-            <div class="team-card__body">
-              <div class="team-card__meta">
-                <h3 class="team-card__name">Karim Goß</h3>
-                <p class="team-card__role">Webentwicklung &amp; SEO</p>
-                <p class="team-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Regensburg
-                </p>
-              </div>
-              <p class="team-card__bio">
-                [Kurze Beschreibung: Hintergrund und Expertise von Karim.]
-                [Zweiter Satz: Was Karim zum Team beisteuert.]
-              </p>
-              <div class="team-card__links">
-                <a href="#" class="team-card__social" aria-label="LinkedIn-Profil von Karim Goß" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         BOOKING / CONSULTATION
-    ============================================================ -->
-    <section class="booking section" id="erstgespraech" aria-labelledby="booking-heading">
-      <div class="container booking__inner">
-
-        <!-- Header -->
-        <p class="section-label">Kostenloses Erstgespräch</p>
-        <h2 class="section-title" id="booking-heading">
-          30 Minuten. Kein Druck.<br /><em>Echte Lösungen.</em>
-        </h2>
-        <p class="section-body booking__subtext">
-          Wir hören zu, verstehen Ihr Unternehmen und zeigen Ihnen genau,
-          was möglich ist. Kostenlos, unverbindlich, konkret.
-        </p>
-
-        <!-- 3-step process -->
-        <ol class="booking__steps" aria-label="Ablauf des Erstgesprächs">
-
-          <li class="booking-step">
-            <div class="booking-step__connector" aria-hidden="true"></div>
-            <div class="booking-step__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-            </div>
-            <span class="booking-step__number" aria-hidden="true">01</span>
-            <p class="booking-step__title">Termin wählen</p>
-          </li>
-
-          <li class="booking-step">
-            <div class="booking-step__connector" aria-hidden="true"></div>
-            <div class="booking-step__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-              </svg>
-            </div>
-            <span class="booking-step__number" aria-hidden="true">02</span>
-            <p class="booking-step__title">Gespräch führen</p>
-          </li>
-
-          <li class="booking-step">
-            <div class="booking-step__connector booking-step__connector--last" aria-hidden="true"></div>
-            <div class="booking-step__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-              </svg>
-            </div>
-            <span class="booking-step__number" aria-hidden="true">03</span>
-            <p class="booking-step__title">Angebot erhalten</p>
-          </li>
-
-        </ol>
-
-        <!-- CTA area -->
-        <div class="booking__cta-area">
-
-          <!-- Calendly inline widget -->
-          <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/ekymedia-info/20-min-erstgesprach?hide_gdpr_banner=1&primary_color=1a2b4a"
-            style="min-width:320px;height:700px;"
-          ></div>
-
-          <!-- Primary CTA -->
-          <a href="https://calendly.com/ekymedia-info/20-min-erstgesprach" class="btn btn--gold booking__primary-btn" target="_blank" rel="noopener noreferrer">
-            Termin kostenlos sichern
-          </a>
-
-          <!-- Secondary options -->
-          <div class="booking__secondary">
-            <a
-              href="#kontakt"
-              class="booking__whatsapp-link"
-              aria-label="Zum Kontaktformular"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              Oder Kontaktformular nutzen
-            </a>
-            <span class="booking__divider" aria-hidden="true">·</span>
-            <a href="mailto:info@ekymedia.de" class="booking__phone-link">
-              info@ekymedia.de
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Trust elements -->
-        <ul class="booking__trust" role="list" aria-label="Vertrauenselemente">
-          <li>
-            <span class="booking__trust-icon" aria-hidden="true">✓</span>
-            Kostenlos &amp; unverbindlich
-          </li>
-          <li>
-            <span class="booking__trust-icon" aria-hidden="true">✓</span>
-            Antwort innerhalb 24 Stunden
-          </li>
-          <li>
-            <span class="booking__trust-icon" aria-hidden="true">✓</span>
-            Keine Verkaufsgespräche
-          </li>
-          <li>
-            <span class="booking__trust-icon" aria-hidden="true">✓</span>
-            DSGVO-konform
-          </li>
-        </ul>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CONTACT / CTA
-    ============================================================ -->
-    <section class="contact section" id="kontakt" aria-labelledby="contact-heading">
-      <div class="container contact__inner">
-        <p class="section-label">Jetzt starten</p>
-        <h2 class="section-title" id="contact-heading">
-          Bereit für eine Website,<br />
-          <em>die wirklich verkauft?</em>
-        </h2>
-        <p class="section-body">
-          Buchen Sie ein kostenloses Erstgespräch. Wir analysieren Ihre aktuelle
-          Online-Präsenz und zeigen Ihnen konkret, was möglich ist.
-        </p>
-        <div class="contact__actions">
-          <a href="mailto:info@ekymedia.de" class="btn btn--gold">info@ekymedia.de</a>
-          <a href="tel:" class="btn btn--outline-light">[WIRD NACHGETRAGEN]</a>
-        </div>
-        <p class="contact__locations">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Würzburg &amp; Regensburg, Bayern
-        </p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ
-    ============================================================ -->
-    <section class="faq section section--light" id="faq" aria-labelledby="faq-heading">
-      <div class="container faq__inner">
-        <p class="section-label">Häufige Fragen</p>
-        <h2 class="section-title" id="faq-heading">Alles was Sie<br />wissen müssen.</h2>
-
-        <dl class="faq__list" id="faqList">
-
-          <div class="faq-item" id="faq-item-1">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-1"
-                id="faq-btn-1"
-              >
-                Wie lange läuft ein Vertrag bei EKY Media?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>
-              <p>Beim Kauf-Modell gibt es nach dem einmaligen Setup keine Mindestlaufzeit – die monatliche Pauschale ist jederzeit kündbar. Beim Laufzeit-Modell gilt eine Mindestlaufzeit von 24 Monaten, danach monatlich kündbar ohne automatische Verlängerung.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-2">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-2"
-                id="faq-btn-2"
-              >
-                Was kostet eine Website bei EKY Media wirklich?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
-              <p>Das Starter-Paket beginnt bei 2.200&nbsp;€ einmalig oder 0&nbsp;€ Einstieg mit 399&nbsp;€/Monat. Alle Preise sind transparent – keine versteckten Kosten.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-3">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-3"
-                id="faq-btn-3"
-              >
-                Wie lange dauert die Umsetzung?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
-              <p>In der Regel 2–3 Wochen nach Freigabe aller Inhalte.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-4">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-4"
-                id="faq-btn-4"
-              >
-                Was ist ein KI Voice Agent?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
-              <p>Ein KI-System, das Anrufe entgegennimmt, Fragen beantwortet und Termine bucht – 24/7 automatisiert.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-5">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-5"
-                id="faq-btn-5"
-              >
-                Kann ich später upgraden?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>
-              <p>Ja, alle Leistungen sind modular erweiterbar.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-6">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-6"
-                id="faq-btn-6"
-              >
-                Arbeitet ihr nur in Bayern?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden>
-              <p>Nein, wir arbeiten deutschlandweit, auch komplett remote.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-7">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-7"
-                id="faq-btn-7"
-              >
-                Was wenn mir das Ergebnis nicht gefällt?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" hidden>
-              <p>Wir arbeiten iterativ und nehmen Feedback auf, bis Sie zufrieden sind.</p>
-            </dd>
-          </div>
-
-          <div class="faq-item" id="faq-item-8">
-            <dt>
-              <button
-                class="faq-item__trigger"
-                aria-expanded="false"
-                aria-controls="faq-panel-8"
-                id="faq-btn-8"
-              >
-                Sind eure Systeme DSGVO-konform?
-                <span class="faq-item__arrow" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-            </dt>
-            <dd class="faq-item__panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8" hidden>
-              <p>Ja, alle Systeme werden nach deutschem Datenschutzrecht umgesetzt.</p>
-            </dd>
-          </div>
-
-        </dl>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        EKY <span>Media</span> GbR
-      </div>
-      <nav class="footer__legal" aria-label="Rechtliche Seiten">
-        <button class="footer__legal-link" data-modal="impressum">Impressum</button>
-        <button class="footer__legal-link" data-modal="datenschutz">Datenschutz</button>
-        <button class="footer__legal-link" data-modal="agb">AGB</button>
-      </nav>
-      <p class="footer__copy">
-        &copy; 2026 EKY Media GbR · Würzburg &amp; Regensburg
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" role="dialog" aria-label="Mobilmenü">
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#branchen">Branchen</a>
+    <a href="#preise">Preise</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="mob-cta">Erstgespräch buchen</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero" id="hero" aria-labelledby="hero-h1">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="c hero-inner">
+
+    <div class="hero-left">
+      <p class="hero-eyebrow">
+        <span class="hero-dot" aria-hidden="true"></span>
+        Digitalagentur · Würzburg &amp; Regensburg
       </p>
+      <h1 class="hero-h1" id="hero-h1">
+        Wir bauen<br/>Unternehmen,<br/><em>die verkaufen.</em>
+      </h1>
+      <p class="hero-sub">
+        Maßgeschneiderte Websites, KI-Integration und Voice Agents –
+        für Handwerker, Praxen und Mittelstand in Bayern.
+        Kein Baukastensystem. Keine Templates. Nur Ergebnisse.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-gold">Kostenloses Erstgespräch</a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+      </div>
+      <div class="hero-badges" aria-label="Standorte und Merkmale">
+        <span class="badge">Würzburg</span>
+        <span class="badge">Regensburg</span>
+        <span class="badge">DSGVO-konform</span>
+        <span class="badge">Keine Bindung nach Kauf</span>
+      </div>
     </div>
-  </footer>
 
-  <!-- Legal Modals (placeholders) -->
-  <div class="modal" id="modal-impressum" role="dialog" aria-modal="true" aria-labelledby="modal-impressum-title" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__box">
-      <button class="modal__close" aria-label="Schließen">&times;</button>
-      <h2 id="modal-impressum-title">Impressum</h2>
-      <div class="modal__content">
-        <p><strong>EKY Media GbR</strong></p>
-        <p>Müllersweg 15<br />97249 Eisingen<br />Bayern, Deutschland</p>
-        <p>
-          <strong>E-Mail:</strong> <a href="mailto:info@ekymedia.de">info@ekymedia.de</a><br />
-          <strong>Telefon:</strong> [WIRD NACHGETRAGEN]
+    <!-- Animated Voice Agent visual -->
+    <div class="waveform-wrap" aria-hidden="true" id="waveformWrap">
+      <div class="waveform-ring">
+        <div class="waveform-core">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+      </div>
+      <div class="waveform" id="waveform"></div>
+      <div class="waveform-caption">
+        <strong>KI Voice Agent</strong>
+        <span>24/7 automatisiert · Ihr KI-Telefonsekretär</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     POSITIONING
+═══════════════════════════════════════ -->
+<section class="positioning section" id="positioning" aria-labelledby="pos-h2">
+  <div class="c">
+    <div class="pos-large-num" aria-hidden="true">EKY</div>
+    <p class="label">Warum EKY Media</p>
+    <h2 class="title title-d reveal" id="pos-h2">
+      Kein Baukastensystem.<br/>Keine Templates.<br/><em>Nur echte Ergebnisse.</em>
+    </h2>
+    <div class="pos-grid">
+      <p class="body-text body-text-d reveal">
+        Während andere Agenturen vorgefertigte Themes und Page-Builder nutzen,
+        bauen wir jede Website von Grund auf – sauber im Code, schnell im Browser,
+        stark im Ranking. Und wir bringen KI-Systeme mit, die Arbeit abnehmen.
+      </p>
+      <ul class="pos-list reveal reveal-d1" role="list">
+        <li><span class="pos-check" aria-hidden="true">✓</span>Custom-Development – kein WordPress-Template</li>
+        <li><span class="pos-check" aria-hidden="true">✓</span>KI-Integration vom ersten Tag an</li>
+        <li><span class="pos-check" aria-hidden="true">✓</span>SEO + GEO für lokale Sichtbarkeit</li>
+        <li><span class="pos-check" aria-hidden="true">✓</span>Transparente Preise – keine versteckten Kosten</li>
+        <li><span class="pos-check" aria-hidden="true">✓</span>Max. 24 Monate Laufzeit oder monatlich kündbar nach Kauf</li>
+        <li><span class="pos-check" aria-hidden="true">✓</span>DSGVO-bewusst von Anfang an</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section class="services" id="leistungen" aria-labelledby="svc-h2">
+  <div class="c">
+    <p class="label reveal">Was wir tun</p>
+    <h2 class="title reveal reveal-d1" id="svc-h2">Unsere Leistungen</h2>
+    <div class="svc-grid" style="margin-top:3rem;">
+      <article class="svc-card reveal" data-service="website" tabindex="0" role="button" aria-label="Custom Website – Details öffnen">
+        <div class="svc-num">01</div>
+        <h3>Custom Website</h3>
+        <p>Maßgeschneidert entwickelt, schnell geladen, für Suchmaschinen optimiert. Kein Theme, kein Baukastensystem.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal reveal-d1" data-service="seo" tabindex="0" role="button" aria-label="SEO + GEO – Details öffnen">
+        <div class="svc-num">02</div>
+        <h3>SEO + GEO</h3>
+        <p>Lokale Sichtbarkeit in Würzburg, Regensburg und Bayern. Technisches SEO trifft generative Suchoptimierung.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal reveal-d2" data-service="google" tabindex="0" role="button" aria-label="Google Business – Details öffnen">
+        <div class="svc-num">03</div>
+        <h3>Google Business</h3>
+        <p>Vollständige Optimierung Ihres Google-Unternehmensprofils für mehr Anrufe und Laufkundschaft.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal" data-service="chatbot" tabindex="0" role="button" aria-label="KI-Chatbot – Details öffnen">
+        <div class="svc-num">04</div>
+        <h3>KI-Chatbot</h3>
+        <p>24/7 Kundenbetreuung, Leadqualifizierung und Terminbuchung – vollautomatisiert auf Ihrer Website.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal reveal-d1" data-service="offer" tabindex="0" role="button" aria-label="KI-Angebotsschreiber – Details öffnen">
+        <div class="svc-num">05</div>
+        <h3>KI-Angebotsschreiber</h3>
+        <p>Angebote in Minuten statt Stunden. Der KI-Assistent erstellt professionelle Angebote auf Knopfdruck.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card svc-card--featured reveal reveal-d2" data-service="voice" tabindex="0" role="button" aria-label="Voice Agent – Details öffnen">
+        <div class="svc-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+          KI-Highlight
+        </div>
+        <div class="svc-num">06</div>
+        <h3>Voice Agent</h3>
+        <p>Ihr KI-Telefonsekretär – nimmt Anrufe entgegen, qualifiziert Anfragen und leitet weiter. 24/7.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal" data-service="branding" tabindex="0" role="button" aria-label="Branding & CI – Details öffnen">
+        <div class="svc-num">07</div>
+        <h3>Branding &amp; CI</h3>
+        <p>Logo, Farben, Schriften und Markenwelt – ein konsistenter Auftritt, der Vertrauen schafft.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal reveal-d1" data-service="video" tabindex="0" role="button" aria-label="Imagevideo & Print – Details öffnen">
+        <div class="svc-num">08</div>
+        <h3>Imagevideo &amp; Print</h3>
+        <p>Professionelle Unternehmensvideos und hochwertige Druckmaterialien für einen starken ersten Eindruck.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+      <article class="svc-card reveal reveal-d2" data-service="crm" tabindex="0" role="button" aria-label="CRM & Automatisierung – Details öffnen">
+        <div class="svc-num">09</div>
+        <h3>CRM &amp; Automatisierung</h3>
+        <p>Workflows, die Arbeit abnehmen: CRM-Setup, E-Mail-Automation und Prozessoptimierung.</p>
+        <span class="svc-card-arrow" aria-hidden="true">→</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     INDUSTRIES
+═══════════════════════════════════════ -->
+<section class="industries" id="branchen" aria-labelledby="ind-h2">
+  <div class="c">
+    <p class="label reveal">Wen wir bedienen</p>
+    <h2 class="title reveal reveal-d1" id="ind-h2">Branchen, die<br/><em>wir kennen.</em></h2>
+    <div class="ind-grid">
+      <div class="ind-item reveal"><span class="ind-num">01</span><h3>Handwerksbetriebe</h3><p>Elektriker, Installateure, Maler, Tischler – mehr Aufträge durch lokale Sichtbarkeit.</p></div>
+      <div class="ind-item reveal reveal-d1"><span class="ind-num">02</span><h3>Zahnarztpraxen &amp; Dentallabore</h3><p>Patientengewinnung, Online-Terminbuchung und professioneller Webauftritt für Mediziner.</p></div>
+      <div class="ind-item reveal reveal-d2"><span class="ind-num">03</span><h3>Gastronomie &amp; Hotellerie</h3><p>Reservierungssysteme, Google-Optimierung und digitale Speisekarten, die konvertieren.</p></div>
+      <div class="ind-item reveal reveal-d1"><span class="ind-num">04</span><h3>Mittelstand &amp; B2B</h3><p>Professionelle Lead-Generierung und Unternehmensauftritte für etablierte Firmen.</p></div>
+      <div class="ind-item reveal reveal-d2"><span class="ind-num">05</span><h3>Lokale Dienstleister</h3><p>Steuerberater, Rechtsanwälte, Coaches – Vertrauen digital aufbauen und Mandate gewinnen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPARISON
+═══════════════════════════════════════ -->
+<section class="comparison" id="vergleich" aria-labelledby="cmp-h2">
+  <div class="c">
+    <p class="label reveal">EKY Media vs. andere Anbieter</p>
+    <h2 class="title title-d reveal reveal-d1" id="cmp-h2">Was uns <em>unterscheidet.</em></h2>
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-other reveal" aria-label="Andere Agenturen">
+        <div class="cmp-head">
+          <div class="cmp-icon">✕</div>
+          <h3>Andere Agenturen</h3>
+        </div>
+        <ul class="cmp-list" role="list">
+          <li><span class="cmp-mark cmp-bad">✕</span>36–48 Monate Vertragsbindung</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Hohe Einmalgebühren</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Kein KI-System</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Kein Voice Agent, kein KI-Chatbot</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Keine Transparenz bei Preisen</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Anonymer Support</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Generische Templates</li>
+          <li><span class="cmp-mark cmp-bad">✕</span>Keine messbaren Ergebnisse</li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-eky reveal reveal-d1" aria-label="EKY Media">
+        <div class="cmp-head">
+          <div class="cmp-icon">✓</div>
+          <h3>EKY Media</h3>
+        </div>
+        <ul class="cmp-list" role="list">
+          <li><span class="cmp-mark cmp-good">✓</span>Max. 24 Monate oder monatlich kündbar nach Kauf</li>
+          <li><span class="cmp-mark cmp-good">✓</span>0 EUR Einstieg möglich</li>
+          <li><span class="cmp-mark cmp-good">✓</span>KI-Chatbot, KI-Angebotsschreiber, Voice Agent</li>
+          <li><span class="cmp-mark cmp-good">✓</span>24/7 Erreichbarkeit durch KI-Systeme</li>
+          <li><span class="cmp-mark cmp-good">✓</span>Transparente Preise</li>
+          <li><span class="cmp-mark cmp-good">✓</span>Persönlicher Ansprechpartner</li>
+          <li><span class="cmp-mark cmp-good">✓</span>Individuell für die Branche</li>
+          <li><span class="cmp-mark cmp-good">✓</span>Monatliches Reporting</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cmp-cta reveal"><a href="#kontakt" class="btn btn-gold">Jetzt Erstgespräch buchen</a></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     RECHTSSICHERHEIT
+═══════════════════════════════════════ -->
+<section class="legal" id="rechtssicherheit" aria-labelledby="legal-h2">
+  <div class="c">
+    <p class="label reveal">Website &amp; Rechtssicherheit</p>
+    <div class="legal-grid">
+      <div>
+        <h2 class="title title-d reveal" id="legal-h2">Ihr Auftritt –<br/><em>rechtssicher von Anfang an.</em></h2>
+        <p class="body-text body-text-d reveal" style="margin-top:1.25rem;">
+          Eine Website ist mehr als Design und Code. Wir stellen sicher, dass Ihr digitaler Auftritt nicht nur gut aussieht, sondern auch rechtlich einwandfrei ist – DSGVO-konform, barrierefrei und technisch sicher. Kein Abmahnrisiko, keine bösen Überraschungen.
         </p>
-        <p><strong>Vertreten durch die Gesellschafter:</strong><br />
-          Eliyah Korb<br />
-          Emily Weigl<br />
-          Karim Goß
-        </p>
-        <p>
-          <strong>Umsatzsteuer-ID:</strong> [WIRD NACHGETRAGEN]<br />
-          <strong>Registergericht:</strong> [WIRD NACHGETRAGEN]
-        </p>
-        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:1.5rem;">
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br />
-          Eliyah Korb, Müllersweg 15, 97249 Eisingen
-        </p>
+        <div class="legal-note reveal">
+          <strong>Wichtig für Ihr Unternehmen:</strong> Websites ohne Impressum, fehlerhafte Datenschutzerklärungen oder fehlende Cookie-Banner können zu kostspieligen Abmahnungen führen. Mit EKY Media sind Sie von Tag 1 auf der sicheren Seite.
+        </div>
+        <div class="legal-badge reveal">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          WCAG AA · DSGVO · SSL · Impressumspflicht
+        </div>
+      </div>
+      <div class="legal-cards">
+        <div class="legal-card reveal">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h4>DSGVO-konforme Entwicklung</h4>
+          <p>Datenschutz ist kein Nachgedanke. Jede Website wird von Anfang an datenschutzkonform gebaut.</p>
+        </div>
+        <div class="legal-card reveal reveal-d1">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <h4>Impressum &amp; Datenschutz</h4>
+          <p>Rechtssichere Impressums- und Datenschutztexte inklusive – individuell auf Ihr Unternehmen angepasst.</p>
+        </div>
+        <div class="legal-card reveal reveal-d1">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h4>SSL &amp; HTTPS</h4>
+          <p>Verschlüsselte Verbindung für alle Besucher – Pflicht für Google-Rankings und Datenschutz.</p>
+        </div>
+        <div class="legal-card reveal reveal-d2">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h4>Cookie-Banner &amp; Consent</h4>
+          <p>DSGVO-konformes Cookie-Management mit Opt-in – rechtssicher und nutzerfreundlich.</p>
+        </div>
+        <div class="legal-card reveal">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h4>Barrierefreiheit (WCAG AA)</h4>
+          <p>Kontrastverhältnisse, Schriftgrößen, Tastaturnavigation – Ihre Website ist für alle zugänglich.</p>
+        </div>
+        <div class="legal-card reveal reveal-d1">
+          <div class="legal-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h4>Laufende Rechtssicherheit</h4>
+          <p>Gesetze ändern sich – wir halten Ihre Website aktuell und informieren Sie proaktiv.</p>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="modal" id="modal-datenschutz" role="dialog" aria-modal="true" aria-labelledby="modal-datenschutz-title" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__box">
-      <button class="modal__close" aria-label="Schließen">&times;</button>
-      <h2 id="modal-datenschutz-title">Datenschutzerklärung</h2>
-      <p>[Datenschutz-Inhalt folgt]</p>
+<!-- ═══════════════════════════════════════
+     PRICING
+═══════════════════════════════════════ -->
+<section class="pricing" id="preise" aria-labelledby="price-h2">
+  <div class="c">
+    <p class="label reveal">Investition</p>
+    <h2 class="title title-d reveal reveal-d1" id="price-h2">Transparente Preise.<br/><em>Zwei Modelle.</em></h2>
+    <p class="body-text body-text-d reveal" style="margin-bottom:0;max-width:580px;">
+      Kaufen Sie Ihre Website einmalig und kündigen danach monatlich –
+      oder starten Sie ohne Einstiegsinvestition mit 24 Monaten Laufzeit.
+    </p>
+
+    <!-- Toggle -->
+    <div class="price-toggle-wrap" role="group" aria-label="Zahlungsmodell wählen">
+      <div class="price-toggle" id="priceToggle">
+        <div class="price-toggle-pill" id="togglePill"></div>
+        <button class="price-toggle-opt active" data-model="kauf" id="optKauf">Kaufmodell</button>
+        <button class="price-toggle-opt" data-model="laufzeit" id="optLaufzeit">Laufzeitmodell</button>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- BASIC -->
+      <div class="p-card reveal">
+        <div>
+          <p class="p-name">Basic</p>
+          <p class="p-tagline">Starker Einstieg.</p>
+        </div>
+        <ul class="p-features">
+          <li>Moderne, individuelle Website</li>
+          <li>SEO-Basis-Optimierung</li>
+          <li>Google-Unternehmensprofil Einrichtung &amp; Optimierung</li>
+          <li>Saubere Grundstruktur für Conversion</li>
+        </ul>
+        <div class="p-price-block">
+          <span class="p-price-hint" data-kauf="Kaufmodell" data-laufzeit="Laufzeitmodell">Kaufmodell</span>
+          <span class="p-price-setup" data-kauf="2.200 € einmalig" data-laufzeit="0 € Einstieg">2.200 € einmalig</span>
+          <div class="p-price-monthly" data-kauf="149 €<small>/Mo.</small>" data-laufzeit="250 €<small>/Mo.</small>">149 €<small>/Mo.</small></div>
+          <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
+        </div>
+        <a href="#erstgespraech" class="btn btn-ghost-d p-btn">Jetzt anfragen</a>
+      </div>
+
+      <!-- PROFESSIONAL (featured) -->
+      <div class="p-card p-featured reveal reveal-d1">
+        <p class="p-badge">Empfohlen</p>
+        <div>
+          <p class="p-name">Professional</p>
+          <p class="p-tagline">Klarer Vorsprung.</p>
+        </div>
+        <ul class="p-features">
+          <li>Hochwertigere, individuellere Website</li>
+          <li>Erweiterte Seitenstruktur</li>
+          <li>Stärkere SEO-Optimierung</li>
+          <li>KI-Chatbot (24/7 Leadqualifizierung)</li>
+          <li>Verbesserte Conversion-Elemente</li>
+        </ul>
+        <div class="p-price-block">
+          <span class="p-price-hint" data-kauf="Kaufmodell" data-laufzeit="Laufzeitmodell">Kaufmodell</span>
+          <span class="p-price-setup" data-kauf="4.500 € einmalig" data-laufzeit="0 € Einstieg">4.500 € einmalig</span>
+          <div class="p-price-monthly" data-kauf="199 €<small>/Mo.</small>" data-laufzeit="390 €<small>/Mo.</small>">199 €<small>/Mo.</small></div>
+          <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
+        </div>
+        <a href="#erstgespraech" class="btn btn-gold p-btn">Jetzt anfragen</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="p-card reveal reveal-d2">
+        <div>
+          <p class="p-name">Premium</p>
+          <p class="p-tagline">Maximale Wirkung.</p>
+        </div>
+        <ul class="p-features">
+          <li>Alles aus Professional</li>
+          <li>Unternehmensvideo (Basis)</li>
+          <li>Stärkere Markenwirkung &amp; Positionierung</li>
+          <li>Höherwertigeres Design &amp; Gestaltung</li>
+          <li>Mehr Individualisierung &amp; Tiefe</li>
+        </ul>
+        <div class="p-price-block">
+          <span class="p-price-hint" data-kauf="Kaufmodell" data-laufzeit="Laufzeitmodell">Kaufmodell</span>
+          <span class="p-price-setup" data-kauf="9.000 € einmalig" data-laufzeit="0 € Einstieg">9.000 € einmalig</span>
+          <div class="p-price-monthly" data-kauf="299 €<small>/Mo.</small>" data-laufzeit="720 €<small>/Mo.</small>">299 €<small>/Mo.</small></div>
+          <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
+        </div>
+        <a href="#erstgespraech" class="btn btn-ghost-d p-btn">Jetzt anfragen</a>
+      </div>
+
+      <!-- ALL-IN-ONE -->
+      <div class="p-card p-dark reveal reveal-d3">
+        <div>
+          <p class="p-name">All-in-One</p>
+          <p class="p-tagline">Vollständige Außendarstellung.</p>
+        </div>
+        <ul class="p-features">
+          <li>Alles aus Premium</li>
+          <li>Hochwertiges Unternehmensvideo</li>
+          <li>3 Design-Anpassungen pro Jahr</li>
+          <li>Maximale Individualisierung</li>
+          <li>Stärkste SEO- &amp; GEO-Ausrichtung</li>
+          <li>Fokus auf Wachstum &amp; Performance</li>
+        </ul>
+        <div class="p-price-block">
+          <span class="p-price-hint" data-kauf="Kaufmodell" data-laufzeit="Laufzeitmodell">Kaufmodell</span>
+          <span class="p-price-setup" data-kauf="14.000 € einmalig" data-laufzeit="0 € Einstieg">14.000 € einmalig</span>
+          <div class="p-price-monthly" data-kauf="399 €<small>/Mo.</small>" data-laufzeit="1.050 €<small>/Mo.</small>">399 €<small>/Mo.</small></div>
+          <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
+        </div>
+        <a href="#erstgespraech" class="btn btn-gold p-btn">Jetzt anfragen</a>
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div class="p-addons reveal">
+      <p class="p-addons-label">Einzelleistungen &amp; Erweiterungen</p>
+      <div class="addons-grid">
+        <div class="addon"><p class="addon-name">Unternehmensvideo</p><p class="addon-price">ab 3.000 €</p><p class="addon-note">Je nach Aufwand und Umfang individuell kalkuliert.</p></div>
+        <div class="addon"><p class="addon-name">KI Voice Agent</p><p class="addon-price">1.500 – 2.000 € Einrichtung</p><p class="addon-note">+ 150 – 250 €/Monat zzgl. nutzungsabhängiger Kosten.</p></div>
+        <div class="addon"><p class="addon-name">KI-Angebotsautomation</p><p class="addon-price">2.000 – 4.000 € Einrichtung</p><p class="addon-note">+ 200 – 400 €/Monat, optional nutzungsabhängig.</p></div>
+        <div class="addon"><p class="addon-name">Branding &amp; CI</p><p class="addon-price">Logo ab 1.000 €</p><p class="addon-note">Vollständiges CI &amp; Branding: 3.000 – 5.000 €.</p></div>
+        <div class="addon"><p class="addon-name">Print &amp; Offline-Werbung</p><p class="addon-price">ab 1.000 €</p><p class="addon-note">Individuell je nach Material, Umfang und Produktion.</p></div>
+      </div>
+    </div>
+    <p class="p-footnote">Alle Preise zzgl. gesetzlicher MwSt. · Kaufmodell: monatlich kündbar nach vollständiger Einrichtung, kein Mindestvertrag · Laufzeitmodell: 24 Monate Mindestlaufzeit, danach monatlich kündbar, keine automatische Verlängerung.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════ -->
+<section class="gallery" id="galerie" aria-labelledby="gal-h2">
+  <div class="c">
+    <p class="label reveal">Einblicke</p>
+    <h2 class="title reveal reveal-d1" id="gal-h2">So arbeiten <em>wir.</em></h2>
+    <p class="body-text reveal" style="margin-bottom:2.75rem;">Imagefilme, Erklärvideos und Einblicke in unsere Projekte.</p>
+    <div class="gal-filters" role="tablist">
+      <button class="gal-filter active" data-filter="alle">Alle</button>
+      <button class="gal-filter" data-filter="imagefilm">Imagefilme</button>
+      <button class="gal-filter" data-filter="erklaervideo">Erklärvideos</button>
+      <button class="gal-filter" data-filter="referenz">Referenzen</button>
+      <button class="gal-filter" data-filter="team">Team</button>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <div class="gal-item gal-item--lg" data-cat="imagefilm" tabindex="0" role="button" aria-label="Imagevideo Placeholder 1">
+        <div class="gal-media"></div>
+        <div class="gal-overlay">
+          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="gal-info"><span class="gal-tag">Imagefilm</span><p class="gal-lbl">[Projektname]</p></div>
+        </div>
+      </div>
+      <div class="gal-item gal-item--lg" data-cat="erklaervideo" tabindex="0" role="button" aria-label="Erklärvideo Placeholder">
+        <div class="gal-media"></div>
+        <div class="gal-overlay">
+          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="gal-info"><span class="gal-tag">Erklärvideo</span><p class="gal-lbl">[Projektname]</p></div>
+        </div>
+      </div>
+      <div class="gal-item gal-item--sm" data-cat="referenz" tabindex="0" role="button" aria-label="Referenz 1">
+        <div class="gal-media"></div>
+        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Referenz</span><p class="gal-lbl">[Projektname]</p></div></div>
+      </div>
+      <div class="gal-item gal-item--sm" data-cat="team" tabindex="0" role="button" aria-label="Team Placeholder">
+        <div class="gal-media"></div>
+        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Team</span><p class="gal-lbl">[Name / Rolle]</p></div></div>
+      </div>
+      <div class="gal-item gal-item--sm" data-cat="referenz" tabindex="0" role="button" aria-label="Referenz 2">
+        <div class="gal-media"></div>
+        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Referenz</span><p class="gal-lbl">[Projektname]</p></div></div>
+      </div>
+      <div class="gal-item gal-item--cine" data-cat="imagefilm" tabindex="0" role="button" aria-label="Cinematic Placeholder">
+        <div class="gal-media" style="aspect-ratio:21/6;"></div>
+        <div class="gal-overlay">
+          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="gal-info"><span class="gal-tag">Imagefilm</span><p class="gal-lbl">[Projektname – Unterzeile]</p></div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="modal" id="modal-agb" role="dialog" aria-modal="true" aria-labelledby="modal-agb-title" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__box">
-      <button class="modal__close" aria-label="Schließen">&times;</button>
-      <h2 id="modal-agb-title">AGB</h2>
-      <p>[AGB-Inhalt folgt]</p>
+<!-- ═══════════════════════════════════════
+     TEAM
+═══════════════════════════════════════ -->
+<section class="team" id="team" aria-labelledby="team-h2">
+  <div class="c">
+    <p class="label reveal">Das Team</p>
+    <h2 class="title title-d reveal reveal-d1" id="team-h2">Drei Gründer. <em>Eine Mission.</em></h2>
+    <p class="body-text body-text-d reveal" style="margin-bottom:3.5rem;">Junges Team aus Bayern — mit der Energie eines Startups und dem Anspruch einer etablierten Agentur.</p>
+    <div class="team-grid">
+      <article class="team-card reveal">
+        <div class="team-img"><span class="team-initials">EK</span></div>
+        <div class="team-body">
+          <div>
+            <h3 class="team-name">Eliyah Korb</h3>
+            <p class="team-role">Vertrieb &amp; Business Development</p>
+            <p class="team-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Würzburg</p>
+          </div>
+          <p class="team-bio">[Kurze Beschreibung: Hintergrund und Expertise von Eliyah. Was Eliyah zum Team beisteuert.]</p>
+          <div class="team-links">
+            <a href="#" class="team-social" aria-label="LinkedIn von Eliyah Korb" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="team-card reveal reveal-d1">
+        <div class="team-img"><span class="team-initials">EW</span></div>
+        <div class="team-body">
+          <div>
+            <h3 class="team-name">Emily Weigl</h3>
+            <p class="team-role">KI &amp; Automatisierung</p>
+            <p class="team-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Regensburg</p>
+          </div>
+          <p class="team-bio">[Kurze Beschreibung: Hintergrund und Expertise von Emily. Was Emily zum Team beisteuert.]</p>
+          <div class="team-links">
+            <a href="#" class="team-social" aria-label="LinkedIn von Emily Weigl" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="team-card reveal reveal-d2">
+        <div class="team-img"><span class="team-initials">KG</span></div>
+        <div class="team-body">
+          <div>
+            <h3 class="team-name">Karim Goß</h3>
+            <p class="team-role">Webentwicklung &amp; SEO</p>
+            <p class="team-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Regensburg</p>
+          </div>
+          <p class="team-bio">[Kurze Beschreibung: Hintergrund und Expertise von Karim. Was Karim zum Team beisteuert.]</p>
+          <div class="team-links">
+            <a href="#" class="team-social" aria-label="LinkedIn von Karim Goß" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- Floating contact button -->
-  <a
-    href="#kontakt"
-    class="whatsapp-btn"
-    aria-label="Zum Kontaktformular"
-  >
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-    </svg>
-  </a>
+<!-- ═══════════════════════════════════════
+     BOOKING
+═══════════════════════════════════════ -->
+<section class="booking" id="erstgespraech" aria-labelledby="book-h2">
+  <div class="c booking-inner">
+    <p class="label">Kostenloses Erstgespräch</p>
+    <h2 class="title reveal" id="book-h2">30 Minuten. Kein Druck.<br/><em>Echte Lösungen.</em></h2>
+    <p class="body-text reveal">Wir hören zu, verstehen Ihr Unternehmen und zeigen Ihnen genau, was möglich ist. Kostenlos, unverbindlich, konkret.</p>
+    <ol class="booking-steps reveal" aria-label="Ablauf">
+      <li class="bstep">
+        <div class="bstep-line" aria-hidden="true"></div>
+        <div class="bstep-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <span class="bstep-num">01</span><p class="bstep-title">Termin wählen</p>
+      </li>
+      <li class="bstep">
+        <div class="bstep-line" aria-hidden="true"></div>
+        <div class="bstep-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <span class="bstep-num">02</span><p class="bstep-title">Gespräch führen</p>
+      </li>
+      <li class="bstep">
+        <div class="bstep-line bstep-line--last" aria-hidden="true"></div>
+        <div class="bstep-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <span class="bstep-num">03</span><p class="bstep-title">Angebot erhalten</p>
+      </li>
+    </ol>
+    <div class="booking-cta">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ekymedia-info/20-min-erstgesprach?hide_gdpr_banner=1&primary_color=1a2b4a" style="min-width:320px;height:700px;"></div>
+      <a href="https://calendly.com/ekymedia-info/20-min-erstgesprach" class="btn btn-gold booking-primary" target="_blank" rel="noopener noreferrer">Termin kostenlos sichern</a>
+      <div class="booking-sec">
+        <a href="#kontakt" class="booking-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Oder Kontaktformular nutzen</a>
+        <span class="booking-div">·</span>
+        <a href="/cdn-cgi/l/email-protection#89e0e7efe6c9ece2f0e4ecede0e8a7edec" class="booking-link"><span class="__cf_email__" data-cfemail="c9a0a7afa689aca2b0a4acada0a8e7adac">[email&#160;protected]</span></a>
+      </div>
+    </div>
+    <ul class="booking-trust" role="list">
+      <li><span class="booking-trust-icon">✓</span>Kostenlos &amp; unverbindlich</li>
+      <li><span class="booking-trust-icon">✓</span>Antwort innerhalb 24 Stunden</li>
+      <li><span class="booking-trust-icon">✓</span>Keine Verkaufsgespräche</li>
+      <li><span class="booking-trust-icon">✓</span>DSGVO-konform</li>
+    </ul>
+  </div>
+</section>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script src="script.js"></script>
+<!-- ═══════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════ -->
+<section class="contact" id="kontakt" aria-labelledby="con-h2">
+  <div class="c contact-inner">
+    <p class="label">Jetzt starten</p>
+    <h2 class="title reveal" id="con-h2">Bereit für eine Website,<br/><em>die wirklich verkauft?</em></h2>
+    <p class="body-text reveal">Buchen Sie ein kostenloses Erstgespräch. Wir analysieren Ihre aktuelle Online-Präsenz und zeigen Ihnen konkret, was möglich ist.</p>
+    <div class="contact-actions reveal">
+      <a href="/cdn-cgi/l/email-protection#563f38303916333d2f3b33323f37783233" class="btn btn-gold"><span class="__cf_email__" data-cfemail="2841464e47684d4351454d4c4149064c4d">[email&#160;protected]</span></a>
+      <a href="tel:+4916092647414" class="btn btn-ghost">+49 160 92647414</a>
+    </div>
+    <p class="contact-loc reveal">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Würzburg &amp; Regensburg, Bayern
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+═══════════════════════════════════════ -->
+<section class="faq" id="faq" aria-labelledby="faq-h2">
+  <div class="c faq-inner">
+    <p class="label reveal">Häufige Fragen</p>
+    <h2 class="title title-d reveal reveal-d1" id="faq-h2">Alles was Sie<br/><em>wissen müssen.</em></h2>
+    <dl class="faq-list" id="faqList" style="margin-top:3rem;">
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp1">Wie lange läuft ein Vertrag bei EKY Media?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp1" hidden><p>Beim Kauf-Modell gibt es nach dem einmaligen Setup keine Mindestlaufzeit – die monatliche Pauschale ist jederzeit kündbar. Beim Laufzeit-Modell gilt eine Mindestlaufzeit von 24 Monaten, danach monatlich kündbar ohne automatische Verlängerung.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp2">Was kostet eine Website bei EKY Media wirklich?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp2" hidden><p>Das Starter-Paket beginnt bei 2.200 € einmalig oder 0 € Einstieg mit 250 €/Monat. Alle Preise sind transparent – keine versteckten Kosten.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp3">Wie lange dauert die Umsetzung?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp3" hidden><p>In der Regel 2–3 Wochen nach Freigabe aller Inhalte.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp4">Was ist ein KI Voice Agent?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp4" hidden><p>Ein KI-System, das Anrufe entgegennimmt, Fragen beantwortet und Termine bucht – 24/7 automatisiert. Kein Mitarbeiter nötig, keine Wartezeiten.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp5">Kann ich später upgraden?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp5" hidden><p>Ja, alle Leistungen sind modular erweiterbar.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp6">Arbeitet ihr nur in Bayern?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp6" hidden><p>Nein – wir arbeiten deutschlandweit. Unsere Schwerpunkte liegen in Würzburg, Regensburg und Bayern, aber wir betreuen Kunden in ganz Deutschland.</p></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="c footer-inner">
+    <span class="footer-brand">EKY <span>Media</span></span>
+    <div class="footer-socials">
+      <!-- Facebook (placeholder – kein Profil vorhanden) -->
+      <a href="#" class="footer-social" aria-label="Facebook (demnächst)" title="Facebook – demnächst verfügbar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/ekymedia/" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@ekymediagbr" class="footer-social" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+      </a>
+    </div>
+    <div class="footer-legal">
+      <a href="#rechtssicherheit" class="footer-btn" style="text-decoration:none">Website &amp; Recht</a>
+      <button class="footer-btn" data-modal="impressum">Impressum</button>
+      <button class="footer-btn" data-modal="datenschutz">Datenschutz</button>
+    </div>
+    <span class="footer-copy">© 2025 EKY Media GbR</span>
+  </div>
+</footer>
+
+</main><!-- /main -->
+
+<!-- A11Y WIDGET -->
+<div class="a11y-widget" role="toolbar" aria-label="Barrierefreiheit">
+  <button class="a11y-btn" id="a11yFont" aria-label="Schriftgröße ändern" title="Schriftgröße (3 Stufen)">Aa</button>
+  <button class="a11y-btn" id="a11yContrast" aria-label="Hoher Kontrast umschalten" title="Hoher Kontrast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor" stroke="none"/></svg>
+  </button>
+</div>
+
+<!-- SERVICE OVERLAY -->
+<div class="svc-overlay" id="svcOverlay" role="dialog" aria-modal="true" aria-label="Leistung Details">
+  <div class="svc-overlay-back" id="svcBack"></div>
+  <div class="svc-overlay-panel">
+    <button class="svc-close" id="svcClose" aria-label="Schließen">×</button>
+    <div class="svc-overlay-left" id="svcLeft"></div>
+    <div class="svc-overlay-right" id="svcRight"></div>
+  </div>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/4916092647414" class="wa-btn" aria-label="WhatsApp Kontakt" target="_blank" rel="noopener noreferrer">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Modals (Impressum / Datenschutz) -->
+<div class="modal" id="modal-impressum" hidden role="dialog" aria-label="Impressum">
+  <div class="modal-back"></div>
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Schließen">×</button>
+    <h2>Impressum</h2>
+    <div class="modal-content">
+      <p><strong>EKY Media GbR</strong></p>
+      <p>Würzburg &amp; Regensburg, Bayern</p>
+      <p><strong>Kontakt:</strong> <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1d4dac8dcd4d5d8d09fd5d4"><span class="__cf_email__" data-cfemail="741d1a121b34111f0d1911101d155a1011">[email&#160;protected]</span></a></p>
+      <p>[Vollständige Impressumsangaben werden hier eingepflegt.]</p>
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal-datenschutz" hidden role="dialog" aria-label="Datenschutz">
+  <div class="modal-back"></div>
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Schließen">×</button>
+    <h2>Datenschutzerklärung</h2>
+    <div class="modal-content">
+      <p>[Datenschutzerklärung wird hier eingepflegt.]</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tweaks Panel -->
+<div id="tweaks-panel">
+  <h4>Tweaks</h4>
+  <label>Akzentfarbe <input type="color" id="tw-color" value="#C49035"/></label>
+  <label>Waveform zeigen <input type="checkbox" id="tw-wave" checked/></label>
+  <label>Dunkler Hero <input type="checkbox" id="tw-dark" checked/></label>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+'use strict';
+
+// ── TWEAKS ──────────────────────────────────
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+});
+window.parent.postMessage({type:'__edit_mode_available'},'*');
+
+function applyTweaks(t) {
+  document.documentElement.style.setProperty('--gold', t.accentColor);
+  document.documentElement.style.setProperty('--gold-hi', t.accentColor);
+  document.getElementById('waveformWrap').style.display = t.showWaveform ? '' : 'none';
+}
+applyTweaks(TWEAK_DEFAULTS);
+
+document.getElementById('tw-color').addEventListener('input', function(){
+  const v = {accentColor: this.value, showWaveform: document.getElementById('tw-wave').checked, darkHero: document.getElementById('tw-dark').checked};
+  applyTweaks(v);
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits: v},'*');
+});
+document.getElementById('tw-wave').addEventListener('change', function(){
+  const v = {accentColor: document.getElementById('tw-color').value, showWaveform: this.checked, darkHero: document.getElementById('tw-dark').checked};
+  applyTweaks(v);
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits: v},'*');
+});
+
+// ── WAVEFORM BARS ────────────────────────────
+const wf = document.getElementById('waveform');
+const barCount = 36;
+const heights = [8,12,20,32,48,60,72,80,68,56,44,36,52,70,80,64,44,30,52,74,80,66,50,38,60,76,72,54,40,28,44,60,48,32,18,10];
+for (let i = 0; i < barCount; i++) {
+  const b = document.createElement('span');
+  b.className = 'waveform-bar';
+  const h = heights[i % heights.length];
+  b.style.setProperty('--h', h + 'px');
+  b.style.animationDelay = (i * 0.042) + 's';
+  wf.appendChild(b);
+}
+
+// ── NAV ──────────────────────────────────────
+const nav = document.getElementById('nav');
+function updateNav() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+updateNav();
+
+// ── HAMBURGER ────────────────────────────────
+const burger = document.querySelector('.hamburger');
+const mobMenu = document.getElementById('mobMenu');
+burger.addEventListener('click', () => {
+  const open = mobMenu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobMenu.classList.remove('open'); burger.classList.remove('open');
+  burger.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
+}));
+
+// ── SMOOTH ANCHOR SCROLL ─────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const t = document.querySelector(link.getAttribute('href'));
+    if (!t) return; e.preventDefault();
+    const top = t.getBoundingClientRect().top + window.scrollY - nav.offsetHeight;
+    window.scrollTo({top, behavior:'smooth'});
+  });
+});
+
+// ── SCROLL REVEAL ────────────────────────────
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
+
+// ── PRICING TOGGLE ───────────────────────────
+const pill = document.getElementById('togglePill');
+const opts = document.querySelectorAll('.price-toggle-opt');
+let activeModel = 'kauf';
+
+function setPriceModel(model) {
+  activeModel = model;
+  opts.forEach(o => o.classList.toggle('active', o.dataset.model === model));
+  // Animate pill
+  const activeOpt = document.querySelector(`.price-toggle-opt[data-model="${model}"]`);
+  pill.style.width = activeOpt.offsetWidth + 'px';
+  pill.style.transform = model === 'laufzeit' ? `translateX(${document.getElementById('optKauf').offsetWidth}px)` : 'translateX(0)';
+  // Update price displays
+  document.querySelectorAll('[data-kauf]').forEach(el => {
+    const val = el.dataset[model];
+    if (el.tagName === 'DIV' || el.classList.contains('p-price-monthly')) el.innerHTML = val;
+    else el.textContent = val;
+  });
+}
+
+opts.forEach(o => o.addEventListener('click', () => setPriceModel(o.dataset.model)));
+// Init pill size after render
+requestAnimationFrame(() => {
+  const kOpt = document.getElementById('optKauf');
+  pill.style.width = kOpt.offsetWidth + 'px';
+  pill.style.height = kOpt.offsetHeight + 'px';
+  pill.style.top = '4px';
+  pill.style.left = '4px';
+  pill.style.borderRadius = '99px';
+  pill.style.transition = 'transform .35s cubic-bezier(.22,1,.36,1), width .35s cubic-bezier(.22,1,.36,1)';
+});
+
+// ── GALLERY FILTER ───────────────────────────
+document.querySelectorAll('.gal-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.gal-item').forEach(item => {
+      item.classList.toggle('gal-hidden', f !== 'alle' && item.dataset.cat !== f);
+    });
+  });
+});
+
+// ── FAQ ACCORDION ────────────────────────────
+document.querySelectorAll('.faq-item').forEach(item => {
+  const trigger = item.querySelector('.faq-trigger');
+  const panel = item.querySelector('.faq-panel');
+  trigger.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      const p = i.querySelector('.faq-panel'); p.style.maxHeight = '0';
+      i.querySelector('.faq-trigger').setAttribute('aria-expanded','false');
+      p.addEventListener('transitionend', () => { if (!i.classList.contains('open')) p.setAttribute('hidden',''); },{once:true});
+    });
+    if (!isOpen) {
+      item.classList.add('open'); panel.removeAttribute('hidden');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      trigger.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+// ── MODALS ───────────────────────────────────
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const m = document.getElementById('modal-' + btn.dataset.modal);
+    if (m) { m.removeAttribute('hidden'); document.body.style.overflow='hidden'; }
+  });
+});
+document.querySelectorAll('.modal').forEach(m => {
+  m.querySelector('.modal-close')?.addEventListener('click', () => { m.setAttribute('hidden',''); document.body.style.overflow=''; });
+  m.querySelector('.modal-back')?.addEventListener('click', () => { m.setAttribute('hidden',''); document.body.style.overflow=''; });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal:not([hidden])').forEach(m => { m.setAttribute('hidden',''); document.body.style.overflow=''; });
+});
+
+// ── SERVICE OVERLAY ─────────────────────────
+const SVC_DATA = {
+  website: {
+    num:'01', title:'Custom <em>Website</em>', label:'Webentwicklung',
+    desc:'Jede Website, die wir bauen, ist handgeschrieben – kein WordPress, kein Baukasten. Das Ergebnis: blitzschnelle Ladezeiten, sauberer Code und ein Auftritt, der wirklich zu Ihrem Unternehmen passt.',
+    features:['Individuelle Entwicklung ohne Templates','Core Web Vitals optimiert (PageSpeed 90+)','Mobile-first & vollständig responsive','Conversion-optimierte Seitenstruktur','DSGVO-konforme Implementierung'],
+    price:'ab 2.200 €', priceNote:'einmalig · oder 0 € Einstieg im Laufzeitmodell',
+    demo:'website'
+  },
+  seo: {
+    num:'02', title:'SEO + <em>GEO</em>', label:'Suchmaschinenoptimierung',
+    desc:'Wir bringen Ihr Unternehmen auf Seite 1 – lokal in Würzburg & Regensburg und darüber hinaus. Mit technischem SEO und generativer Suchoptimierung (GEO) sind Sie auch in KI-Suchen sichtbar.',
+    features:['Technisches SEO & strukturierte Daten','Lokales SEO für Google Maps & Suche','Generative Engine Optimization (GEO)','Monatliche Keyword-Tracking-Reports','Onpage + Offpage Optimierung'],
+    price:'Im Paket enthalten', priceNote:'ab Professional · oder als Add-on buchbar',
+    demo:'seo'
+  },
+  google: {
+    num:'03', title:'Google <em>Business</em>', label:'Google-Profil-Optimierung',
+    desc:'Ihr Google-Unternehmensprofil ist oft der erste Eindruck. Wir optimieren Ihr Profil vollständig: Fotos, Öffnungszeiten, Kategorien, Beiträge und Bewertungsmanagement – für mehr Anrufe und Laufkundschaft.',
+    features:['Vollständige Profiloptimierung','Regelmäßige Google Posts','Bewertungsmanagement-Strategie','Keyword-optimierte Beschreibungen','Tracking & monatliches Reporting'],
+    price:'Im Basic-Paket enthalten', priceNote:'Einrichtung & laufende Pflege',
+    demo:'google'
+  },
+  chatbot: {
+    num:'04', title:'KI-<em>Chatbot</em>', label:'24/7 Kundenbetreuung',
+    desc:'Ihr KI-Assistent auf der Website – beantwortet Fragen, qualifiziert Leads und bucht Termine automatisch. Rund um die Uhr, ohne dass Sie eingreifen müssen.',
+    features:['Trainiert auf Ihr Unternehmen & Ihre Leistungen','Automatische Terminbuchung (Calendly, Cal.com)','Lead-Qualifizierung & CRM-Übergabe','Mehrsprachig konfigurierbar','Nahtlose Website-Integration'],
+    price:'ab 199 €/Monat', priceNote:'im Professional-Paket enthalten',
+    demo:'chatbot'
+  },
+  offer: {
+    num:'05', title:'KI-<em>Angebotsschreiber</em>', label:'Angebotserstellung automatisiert',
+    desc:'Angebote schreiben kostet Zeit – Zeit, die Sie besser nutzen können. Unser KI-System erstellt professionelle, individuelle Angebote auf Knopfdruck – basierend auf Ihren Leistungen, Preisen und dem Kundenwunsch.',
+    features:['Angebot in unter 2 Minuten','Individuell auf Ihr Unternehmen trainiert','Professionelles Design & Branding','Direkter Export als PDF','Optional: automatische E-Mail-Versendung'],
+    price:'2.000 – 4.000 € Einrichtung', priceNote:'+ 200 – 400 €/Monat · nutzungsabhängig',
+    demo:'offer'
+  },
+  voice: {
+    num:'06', title:'Voice <em>Agent</em>', label:'KI-Telefonsekretär',
+    desc:'Ihr KI-Telefonsekretär nimmt Anrufe entgegen, wenn Sie beschäftigt sind – beantwortet Fragen, qualifiziert Anfragen und bucht direkt Termine. Kein Anruf geht mehr verloren.',
+    features:['Nimmt Anrufe 24/7 entgegen','Natürliche Sprachverarbeitung (Deutsch)','Terminbuchung direkt im Gespräch','Weiterleitung bei dringenden Anfragen','Gesprächsprotokoll per E-Mail/CRM'],
+    price:'1.500 – 2.000 € Einrichtung', priceNote:'+ 150 – 250 €/Monat zzgl. Gesprächskosten',
+    demo:'voice'
+  },
+  branding: {
+    num:'07', title:'Branding <em>&amp; CI</em>', label:'Markenentwicklung',
+    desc:'Ein starkes Branding schafft Vertrauen – bevor ein Wort gesagt wird. Wir entwickeln Ihr visuelles Erscheinungsbild: Logo, Farben, Schriften und eine Corporate Identity, die wirklich zu Ihnen passt.',
+    features:['Logo-Entwicklung (3 Konzepte zur Wahl)','Vollständiges Corporate Design Manual','Farb- & Typografie-System','Anwendungsbeispiele & Vorlagen','Nahtlose Integration in Ihre Website'],
+    price:'Logo ab 1.000 €', priceNote:'Vollständiges CI & Branding: 3.000 – 5.000 €',
+    demo:'branding'
+  },
+  video: {
+    num:'08', title:'Imagevideo <em>&amp; Print</em>', label:'Professionelle Medienproduktion',
+    desc:'Ein professionelles Imagevideo sagt mehr als tausend Worte. Wir produzieren Videos, die Ihr Unternehmen authentisch zeigen – und Druckmaterialien, die in Erinnerung bleiben.',
+    features:['Professionelle Videoproduktion vor Ort','Schnitt, Color Grading & Vertonung','Visitenkarten, Flyer, Broschüren','Einheitliches Design über alle Medien','Optional: Social Media Kurzversionen'],
+    price:'Unternehmensvideo ab 3.000 €', priceNote:'Print ab 1.000 € · individuell kalkuliert',
+    demo:'video'
+  },
+  crm: {
+    num:'09', title:'CRM &amp; <em>Automatisierung</em>', label:'Prozessoptimierung',
+    desc:'Schluss mit manuellen Aufgaben. Wir richten CRM-Systeme ein und automatisieren Ihre Workflows – von der Lead-Erfassung bis zur Nachverfolgung. Sie konzentrieren sich auf Ihr Geschäft, den Rest erledigt das System.',
+    features:['CRM-Setup (HubSpot, Pipedrive, GoHighLevel)','E-Mail-Automation & Nurturing-Sequenzen','Lead-Scoring & automatische Aufgaben','Integration mit Website & Chatbot','Schulung & laufender Support'],
+    price:'individuell', priceNote:'je nach Systemkomplexität & Umfang',
+    demo:'crm'
+  }
+};
+
+// Demo renderers
+function renderDemo(type, container) {
+  container.innerHTML = '';
+  switch(type) {
+    case 'chatbot': renderChatbot(container); break;
+    case 'voice':   renderVoice(container); break;
+    case 'offer':   renderOffer(container); break;
+    case 'website': renderWebsite(container); break;
+    case 'seo':     renderSEO(container); break;
+    case 'google':  renderGoogle(container); break;
+    case 'branding':renderBranding(container); break;
+    case 'video':   renderVideo(container); break;
+    case 'crm':     renderCRM(container); break;
+  }
+}
+
+function renderChatbot(c) {
+  c.innerHTML = `<div class="demo-chat">
+    <div class="demo-chat-header">
+      <div class="demo-chat-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div><div class="demo-chat-name">EKY Assistent</div><div class="demo-chat-status">Online</div></div>
+    </div>
+    <div class="demo-chat-msgs" id="chatMsgs"></div>
+    <div class="demo-chat-input"><span>Nachricht schreiben…</span><div class="demo-input-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></div></div>
+  </div>`;
+  const msgs = [
+    {type:'bot', text:'Hallo! Wie kann ich Ihnen helfen? 👋'},
+    {type:'user', text:'Ich brauche einen Termin nächste Woche.'},
+    {type:'bot', text:'Gerne! Wann passt es Ihnen am besten?', btns:['Montag','Dienstag','Mittwoch']},
+    {type:'user', text:'Montag bitte.'},
+    {type:'bot', text:'✓ Termin bestätigt: Montag, 10:00 Uhr. Sie erhalten eine Bestätigung per E-Mail.'}
+  ];
+  const box = document.getElementById('chatMsgs');
+  msgs.forEach((m, i) => {
+    setTimeout(() => {
+      const div = document.createElement('div');
+      div.className = `demo-msg demo-msg-${m.type}`;
+      let html = `<div class="demo-bubble">${m.text}`;
+      if (m.btns) html += `<div style="display:flex;gap:.3rem;margin-top:.4rem;flex-wrap:wrap">${m.btns.map(b=>`<span style="background:rgba(196,144,53,.2);border:1px solid rgba(196,144,53,.4);border-radius:3px;padding:.2rem .5rem;font-size:.7rem;color:#C49035;cursor:pointer">${b}</span>`).join('')}</div>`;
+      html += `</div>`;
+      div.innerHTML = html;
+      box.appendChild(div);
+      requestAnimationFrame(() => div.classList.add('show'));
+      box.scrollTop = box.scrollHeight;
+    }, i * 900 + 400);
+  });
+}
+
+function renderVoice(c) {
+  const steps = ['Eingehender Anruf','KI nimmt Anruf entgegen','Anfrage qualifiziert','Termin gebucht ✓'];
+  const barHs = [6,12,20,34,52,64,72,60,44,30,50,68,72,56,40,28,48,66,70,54,38,24,42,58,52,36,20,14,8];
+  c.innerHTML = `<div class="demo-voice">
+    <div class="demo-phone-ring"><div class="demo-phone-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div></div>
+    <div class="demo-voice-wave" id="vWave">${barHs.map((h,i)=>`<div class="demo-voice-bar" style="--vh:${h}px;animation-delay:${i*.04}s"></div>`).join('')}</div>
+    <div class="demo-voice-steps" id="vSteps">${steps.map(s=>`<div class="demo-vstep"><span class="demo-vstep-dot"></span>${s}</div>`).join('')}</div>
+  </div>`;
+  const stepEls = document.querySelectorAll('.demo-vstep');
+  stepEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('active'), i * 1200 + 300);
+  });
+}
+
+function renderOffer(c) {
+  c.innerHTML = `<div class="demo-offer">
+    <div class="demo-offer-doc">
+      <div class="demo-offer-logo"></div>
+      <div class="demo-offer-title">Angebot #2024-047</div>
+      ${[85,60,45,70,50].map(w=>`<div class="demo-offer-line"><div class="demo-offer-fill" style="width:0" data-w="${w}%"></div></div>`).join('')}
+      <div class="demo-offer-total">
+        <span class="demo-offer-total-label">Gesamtbetrag (netto)</span>
+        <span class="demo-offer-total-val">4.850,00 €</span>
+      </div>
+      <div class="demo-offer-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> In 90 Sekunden erstellt</div>
+    </div>
+  </div>`;
+  document.querySelectorAll('.demo-offer-fill').forEach((el, i) => {
+    setTimeout(() => { el.style.width = el.dataset.w; }, i * 180 + 300);
+  });
+  setTimeout(() => { document.querySelector('.demo-offer-total-val').style.opacity = '1'; }, 1200);
+  setTimeout(() => { document.querySelector('.demo-offer-tag').style.opacity = '1'; }, 1600);
+}
+
+function renderWebsite(c) {
+  c.innerHTML = `<div class="demo-browser">
+    <div class="demo-browser-bar">
+      <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+      <div class="demo-browser-url">www.ihr-unternehmen.de</div>
+    </div>
+    <div class="demo-browser-content">
+      <div class="demo-site-hero">
+        <div class="demo-site-nav">
+          <div class="demo-site-logo">Ihr<span>Unternehmen</span></div>
+          <div class="demo-site-navlinks"><span>Leistungen</span><span>Über uns</span><span>Kontakt</span></div>
+        </div>
+        <div class="demo-site-headline">Ihr Unternehmen.<br/><em>Digital stark.</em></div>
+        <div class="demo-site-sub">Maßgeschneidert entwickelt, schnell geladen, optimiert für Ihre Region.</div>
+        <a class="demo-site-btn">Jetzt Kontakt aufnehmen</a>
+      </div>
+      <div class="demo-site-sections">
+        <div class="demo-site-section"></div>
+        <div class="demo-site-section"></div>
+        <div class="demo-site-section"></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderSEO(c) {
+  const ranks = [
+    {pos:'#1', kw:'Elektriker Würzburg', arrow:'↑ +46'},
+    {pos:'#2', kw:'Klempner Regensburg', arrow:'↑ +31'},
+    {pos:'#3', kw:'Zahnarzt Würzburg Mitte', arrow:'↑ +18'},
+  ];
+  c.innerHTML = `<div class="demo-seo">
+    <div class="demo-seo-chart">
+      <svg class="demo-seo-svg" viewBox="0 0 280 80" fill="none">
+        <polyline points="0,75 40,68 80,58 120,42 160,28 200,16 240,8 280,4" stroke="rgba(196,144,53,0.3)" stroke-width="1.5" fill="none"/>
+        <polyline id="seoLine" points="0,75 0,75" stroke="#C49035" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle id="seoDot" cx="0" cy="75" r="4" fill="#C49035"/>
+      </svg>
+    </div>
+    <div class="demo-rank-list">${ranks.map(r=>`<div class="demo-rank-item"><span class="demo-rank-pos">${r.pos}</span><span class="demo-rank-kw">${r.kw}</span><span class="demo-rank-arrow">${r.arrow}</span></div>`).join('')}</div>
+  </div>`;
+  // Animate line
+  const pts = [[0,75],[40,68],[80,58],[120,42],[160,28],[200,16],[240,8],[280,4]];
+  const line = document.getElementById('seoLine');
+  const dot = document.getElementById('seoDot');
+  let idx = 1;
+  function animLine() {
+    if (idx >= pts.length) return;
+    const slice = pts.slice(0, idx+1).map(p=>p.join(',')).join(' ');
+    line.setAttribute('points', slice);
+    dot.setAttribute('cx', pts[idx][0]);
+    dot.setAttribute('cy', pts[idx][1]);
+    idx++;
+    setTimeout(animLine, 200);
+  }
+  setTimeout(animLine, 400);
+}
+
+function renderGoogle(c) {
+  c.innerHTML = `<div class="demo-gmb">
+    <div class="demo-gmb-cover"></div>
+    <div class="demo-gmb-body">
+      <div class="demo-gmb-name">Muster GmbH & Co. KG</div>
+      <div class="demo-gmb-cat">Handwerksbetrieb · Würzburg</div>
+      <div class="demo-gmb-stars">
+        <span class="demo-gmb-score">4.9</span>
+        <div class="demo-gmb-star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <span class="demo-gmb-count">(127 Bewertungen)</span>
+      </div>
+      <div class="demo-gmb-actions">
+        <div class="demo-gmb-action"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6.06 6.06l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Anrufen</div>
+        <div class="demo-gmb-action"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Route</div>
+        <div class="demo-gmb-action"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Website</div>
+      </div>
+      <div class="demo-gmb-info">
+        <div class="demo-gmb-row"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Mo–Fr 08:00–18:00 · <span style="color:#2e7d32;font-weight:600">Geöffnet</span></div>
+        <div class="demo-gmb-row"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Musterstraße 12, 97070 Würzburg</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderBranding(c) {
+  c.innerHTML = `<div class="demo-brand">
+    <div class="demo-brand-colors">
+      <div class="demo-brand-swatch" style="background:#070B14"></div>
+      <div class="demo-brand-swatch" style="background:#C49035"></div>
+      <div class="demo-brand-swatch" style="background:#EEF2FA"></div>
+      <div class="demo-brand-swatch" style="background:#4A6FA5"></div>
+    </div>
+    <div class="demo-brand-logo-area">
+      <div class="demo-brand-logo">EKY <span>Media</span></div>
+    </div>
+    <div class="demo-brand-type">
+      <div class="demo-brand-font">
+        <div class="demo-brand-font-name">Display</div>
+        <div class="demo-brand-font-sample">Aa</div>
+        <div style="font-size:.6rem;color:var(--muted);margin-top:.2rem">Cormorant Garamond</div>
+      </div>
+      <div class="demo-brand-font">
+        <div class="demo-brand-font-name">Body</div>
+        <div class="demo-brand-font-sample2">Aa</div>
+        <div style="font-size:.6rem;color:var(--muted);margin-top:.2rem">Space Grotesk</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderVideo(c) {
+  c.innerHTML = `<div class="demo-video">
+    <div class="demo-video-thumb">
+      <div class="demo-video-play">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div style="position:absolute;bottom:.75rem;left:.85rem;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Imagevideo · 2:30 min</div>
+    </div>
+    <div class="demo-video-label">Professionelle Produktion · Dreh vor Ort · Schnitt &amp; Vertonung inklusive</div>
+  </div>`;
+}
+
+function renderCRM(c) {
+  const nodes = [
+    {icon:'📥', label:'Lead kommt rein (Formular/Chat)'},
+    {icon:'🤖', label:'KI qualifiziert automatisch'},
+    {icon:'📋', label:'Aufgabe im CRM erstellt'},
+    {icon:'📧', label:'Follow-up E-Mail gesendet'},
+    {icon:'✅', label:'Auftrag gewonnen'}
+  ];
+  c.innerHTML = `<div class="demo-crm">
+    <div class="demo-crm-flow">${nodes.map((n,i)=>`
+      <div class="demo-crm-node" id="crmN${i}">
+        <div class="demo-crm-node-icon">${n.icon}</div>
+        <span>${n.label}</span>
+      </div>
+      ${i < nodes.length-1 ? '<div class="demo-crm-connector"></div>' : ''}
+    `).join('')}</div>
+  </div>`;
+  nodes.forEach((_, i) => {
+    setTimeout(() => document.getElementById(`crmN${i}`)?.classList.add('lit'), i * 600 + 300);
+  });
+}
+
+// Open overlay
+function openOverlay(serviceKey) {
+  const data = SVC_DATA[serviceKey];
+  if (!data) return;
+  const left = document.getElementById('svcLeft');
+  const right = document.getElementById('svcRight');
+  left.innerHTML = `
+    <div>
+      <p class="svc-ol-num">${data.num} · ${data.label}</p>
+      <h2 class="svc-ol-title">${data.title}</h2>
+    </div>
+    <p class="svc-ol-desc">${data.desc}</p>
+    <ul class="svc-ol-features">${data.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+    <div class="svc-ol-price">
+      <span class="svc-ol-price-label">Investition</span>
+      <span class="svc-ol-price-val">${data.price}</span>
+      <span class="svc-ol-price-note">${data.priceNote}</span>
+    </div>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+      <a href="#erstgespraech" class="btn btn-gold" id="svcCTA">Jetzt anfragen</a>
+      <a href="#preise" class="btn btn-ghost">Alle Pakete</a>
+    </div>`;
+  renderDemo(data.demo, right);
+  document.getElementById('svcOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('svcCTA').addEventListener('click', closeOverlay);
+}
+
+function closeOverlay() {
+  document.getElementById('svcOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('svcClose').addEventListener('click', closeOverlay);
+document.getElementById('svcBack').addEventListener('click', closeOverlay);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
+
+document.querySelectorAll('[data-service]').forEach(card => {
+  card.addEventListener('click', () => openOverlay(card.dataset.service));
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openOverlay(card.dataset.service); }});
+});
+
+// ── ACCESSIBILITY WIDGET ─────────────────────
+const fontSizes = ['', 'fs-md', 'fs-lg'];
+let fsIdx = parseInt(localStorage.getItem('eky-fs') || '0');
+const fontBtn = document.getElementById('a11yFont');
+const contBtn = document.getElementById('a11yContrast');
+let hcOn = localStorage.getItem('eky-hc') === '1';
+
+function applyFS() {
+  fontSizes.forEach(c => { if(c) document.documentElement.classList.remove(c); });
+  if (fontSizes[fsIdx]) document.documentElement.classList.add(fontSizes[fsIdx]);
+  fontBtn.classList.toggle('active', fsIdx > 0);
+  fontBtn.setAttribute('aria-label', ['Schriftgröße normal','Schriftgröße mittel','Schriftgröße groß'][fsIdx]);
+}
+function applyHC() {
+  document.documentElement.classList.toggle('hc', hcOn);
+  contBtn.classList.toggle('active', hcOn);
+}
+applyFS(); applyHC();
+
+fontBtn.addEventListener('click', () => {
+  fsIdx = (fsIdx + 1) % fontSizes.length;
+  localStorage.setItem('eky-fs', fsIdx);
+  applyFS();
+});
+contBtn.addEventListener('click', () => {
+  hcOn = !hcOn;
+  localStorage.setItem('eky-hc', hcOn ? '1' : '0');
+  applyHC();
+});
+
+})();
+</script>
 </body>
 </html>

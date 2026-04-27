@@ -298,56 +298,126 @@
 
 
 <!-- ═══════════════════════════════════════
-     GALLERY
+     PORTFOLIO
 ═══════════════════════════════════════ -->
-<section class="gallery" id="galerie" aria-labelledby="gal-h2">
-  <div class="c">
-    <p class="label reveal">Arbeitsproben & Einblicke</p>
-    <h2 class="title reveal reveal-d1" id="gal-h2">So arbeiten <em>wir.</em></h2>
-    <p class="body-text reveal" style="margin-bottom:2.75rem;">Ausgewählte Systembeispiele, Konzeptprojekte und Einblicke in unsere Arbeitsweise.</p>
-    <div class="gal-filters" role="tablist">
-      <button class="gal-filter active" data-filter="alle">Alle</button>
-      <button class="gal-filter" data-filter="imagefilm">Imagefilme</button>
-      <button class="gal-filter" data-filter="erklaervideo">Erklärvideos</button>
-      <button class="gal-filter" data-filter="konzeptprojekte">Konzeptprojekte</button>
-      <button class="gal-filter" data-filter="team">Team</button>
-    </div>
-    <div class="gal-grid" id="galGrid">
-      <div class="gal-item gal-item--lg" data-cat="imagefilm" tabindex="0" role="button" aria-label="Imagefilm: Schreinerei Müller">
-        <div class="gal-media"></div>
-        <div class="gal-overlay">
-          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="gal-info"><span class="gal-tag">Imagefilm</span><p class="gal-lbl">Schreinerei Müller</p></div>
-        </div>
-      </div>
-      <div class="gal-item gal-item--lg" data-cat="erklaervideo" tabindex="0" role="button" aria-label="Erklärvideo: Prozessautomatisierung">
-        <div class="gal-media"></div>
-        <div class="gal-overlay">
-          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="gal-info"><span class="gal-tag">Erklärvideo</span><p class="gal-lbl">KI-Prozessautomatisierung</p></div>
-        </div>
-      </div>
-      <div class="gal-item gal-item--sm" data-cat="konzeptprojekte" tabindex="0" role="button" aria-label="Konzeptprojekt: Zahnarztpraxis">
-        <div class="gal-media"></div>
-        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Konzeptprojekt</span><p class="gal-lbl">Zahnarztpraxis · Beispielsystem</p></div></div>
-      </div>
-      <div class="gal-item gal-item--sm" data-cat="team" tabindex="0" role="button" aria-label="Team EKY Media">
-        <div class="gal-media"></div>
-        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Team</span><p class="gal-lbl">EKY Media · Würzburg &amp; Regensburg</p></div></div>
-      </div>
-      <div class="gal-item gal-item--sm" data-cat="konzeptprojekte" tabindex="0" role="button" aria-label="Konzeptprojekt: Hotelbetrieb">
-        <div class="gal-media"></div>
-        <div class="gal-overlay"><div class="gal-info"><span class="gal-tag">Konzeptprojekt</span><p class="gal-lbl">Hotelbetrieb · Beispielsystem</p></div></div>
-      </div>
-      <div class="gal-item gal-item--cine" data-cat="imagefilm" tabindex="0" role="button" aria-label="Imagefilm: Regensburg 2025">
-        <div class="gal-media" style="aspect-ratio:21/6;"></div>
-        <div class="gal-overlay">
-          <div class="gal-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="gal-info"><span class="gal-tag">Imagefilm</span><p class="gal-lbl">Imagefilm Regensburg 2025</p></div>
-        </div>
-      </div>
-    </div>
+<section class="portfolio" id="galerie" aria-labelledby="port-h2">
+  <div class="c port-header">
+    <p class="label reveal">Ausgewählte Projektbeispiele</p>
+    <h2 class="title reveal" id="port-h2">Digitale Systeme,<br/><em>die wir bauen.</em></h2>
+    <p class="body-text reveal" style="text-align:center;max-width:560px;margin-inline:auto;margin-top:1rem;">Ein Blick auf Websites, Systeme und digitale Auftritte – wie wir sie für Handwerk, Praxen, Gastro und Mittelstand konzipieren und umsetzen.</p>
   </div>
+
+  <div class="port-outer">
+    <button class="port-arrow port-arrow--prev" id="portPrev" aria-label="Vorheriges Projekt">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="port-viewport" id="portVp" role="region" aria-label="Projektbeispiele">
+      <div class="port-track" id="portTrack">
+
+        <div class="port-card" data-idx="0">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--1">
+              <div class="port-s-nav"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow"></div><div class="port-s-h1"></div><div class="port-s-h1 port-s-h1--b"></div><div class="port-s-sub"></div><div class="port-s-cta"></div></div>
+              <div class="port-s-below"><div class="port-s-col"></div><div class="port-s-col"></div><div class="port-s-col"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Arbeitsprobe · Handwerk</span>
+            <h3 class="port-title">Handwerksbetrieb</h3>
+            <p class="port-sub">Conversion-optimierte Custom-Website mit Online-Anfrage, Local SEO und strukturierter Leistungsdarstellung.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-idx="1">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--2">
+              <div class="port-s-nav port-s-nav--light"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow"></div><div class="port-s-h1"></div><div class="port-s-h1 port-s-h1--b"></div><div class="port-s-sub"></div><div class="port-s-cta"></div></div>
+              <div class="port-s-below"><div class="port-s-col"></div><div class="port-s-col"></div><div class="port-s-col"></div><div class="port-s-col"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Arbeitsprobe · Medizin</span>
+            <h3 class="port-title">Zahnarztpraxis</h3>
+            <p class="port-sub">Professioneller Webauftritt mit Online-Terminbuchung, Vertrauensaufbau und patientenorientierten Inhalten.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-idx="2">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--3">
+              <div class="port-s-nav"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow"></div><div class="port-s-h1"></div><div class="port-s-h1 port-s-h1--b"></div><div class="port-s-sub"></div><div class="port-s-cta"></div></div>
+              <div class="port-s-below"><div class="port-s-col"></div><div class="port-s-col"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Arbeitsprobe · Gastronomie</span>
+            <h3 class="port-title">Restaurant & Gastro</h3>
+            <p class="port-sub">Atmosphärischer Webauftritt mit Online-Reservierung, digitaler Speisekarte und lokalem SEO-Fundament.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-idx="3">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--4">
+              <div class="port-s-nav"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow"></div><div class="port-s-h1"></div><div class="port-s-h1 port-s-h1--b"></div><div class="port-s-sub"></div><div class="port-s-cta"></div></div>
+              <div class="port-s-below"><div class="port-s-col"></div><div class="port-s-col"></div><div class="port-s-col"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Arbeitsprobe · Hotellerie</span>
+            <h3 class="port-title">Boutique Hotel</h3>
+            <p class="port-sub">Eleganter Hotel-Webauftritt mit Buchungssystem, Zimmerpräsentation und direkter Kontaktführung.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-idx="4">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--5">
+              <div class="port-s-nav port-s-nav--light"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow"></div><div class="port-s-h1 port-s-h1--dk"></div><div class="port-s-h1 port-s-h1--dk port-s-h1--b"></div><div class="port-s-sub port-s-sub--dk"></div><div class="port-s-cta"></div></div>
+              <div class="port-s-below port-s-below--lt"><div class="port-s-col port-s-col--dk"></div><div class="port-s-col port-s-col--dk"></div><div class="port-s-col port-s-col--dk"></div><div class="port-s-col port-s-col--dk"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Arbeitsprobe · Mittelstand</span>
+            <h3 class="port-title">B2B Lead-Website</h3>
+            <p class="port-sub">Professioneller Unternehmensauftritt mit Lead-Generierung, Referenzdarstellung und strukturierter Angebotsführung.</p>
+          </div>
+        </div>
+
+        <div class="port-card" data-idx="5">
+          <div class="port-mockup">
+            <div class="port-chrome"><div class="port-dots"><i></i><i></i><i></i></div><div class="port-urlbar"></div></div>
+            <div class="port-screen port-screen--6">
+              <div class="port-s-nav"></div>
+              <div class="port-s-hero"><div class="port-s-eyebrow port-s-eyebrow--teal"></div><div class="port-s-h1"></div><div class="port-s-h1 port-s-h1--b"></div><div class="port-s-sub"></div><div class="port-s-cta port-s-cta--teal"></div></div>
+              <div class="port-s-below"><div class="port-s-col"></div><div class="port-s-col"></div></div>
+            </div>
+          </div>
+          <div class="port-info">
+            <span class="port-badge">Systembeispiel · KI</span>
+            <h3 class="port-title">KI Voice Agent System</h3>
+            <p class="port-sub">Dashboard und Interface für einen KI-Telefonagenten – 24/7 automatisierte Anrufqualifizierung und Terminbuchung.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <button class="port-arrow port-arrow--next" id="portNext" aria-label="Nächstes Projekt">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <div class="port-dots" id="portDots" role="tablist" aria-label="Projekt auswählen"></div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -1015,17 +1085,68 @@ requestAnimationFrame(() => {
   pill.style.transition = 'transform .35s cubic-bezier(.22,1,.36,1), width .35s cubic-bezier(.22,1,.36,1)';
 });
 
-// ── GALLERY FILTER ───────────────────────────
-document.querySelectorAll('.gal-filter').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.gal-item').forEach(item => {
-      item.classList.toggle('gal-hidden', f !== 'alle' && item.dataset.cat !== f);
-    });
+// ── PORTFOLIO SLIDER ────────────────────────────
+(function() {
+  const track = document.getElementById('portTrack');
+  const vp = document.getElementById('portVp');
+  const dotsWrap = document.getElementById('portDots');
+  if (!track || !vp) return;
+  const cards = [...track.querySelectorAll('.port-card')];
+  const total = cards.length;
+  let current = 0;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'port-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Projekt ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
   });
-});
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(total - 1, idx));
+    cards.forEach((c, i) => {
+      c.classList.toggle('active', i === current);
+      c.classList.toggle('adj-prev', i === current - 1);
+      c.classList.toggle('adj-next', i === current + 1);
+    });
+    cards[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    dotsWrap.querySelectorAll('.port-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('portPrev')?.addEventListener('click', () => goTo(current - 1));
+  document.getElementById('portNext')?.addEventListener('click', () => goTo(current + 1));
+
+  let scrollTimer;
+  vp.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const vpCenter = vp.scrollLeft + vp.offsetWidth / 2;
+      let closest = 0, minDist = Infinity;
+      cards.forEach((c, i) => {
+        const dist = Math.abs((c.offsetLeft + c.offsetWidth / 2) - vpCenter);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      if (closest !== current) goTo(closest);
+    }, 60);
+  });
+
+  let tx = 0;
+  vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  vp.addEventListener('touchend', e => {
+    const dx = tx - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 40) goTo(dx > 0 ? current + 1 : current - 1);
+  });
+
+  vp.setAttribute('tabindex', '0');
+  vp.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  goTo(0);
+})();
 
 // ── FAQ ACCORDION ────────────────────────────
 document.querySelectorAll('.faq-item').forEach(item => {

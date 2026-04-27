@@ -640,3 +640,224 @@ html.hc .demo-gmb { filter:none; }
   *,*::before,*::after { animation-duration:.01ms !important;transition-duration:.01ms !important; }
   .reveal { opacity:1;transform:none; }
 }
+
+/* ── NAV SOCIALS ─────────────────────────────────────────────────────── */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-inline: 0.5rem;
+}
+.nav-social {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.38);
+  transition: border-color .2s, color .2s;
+  flex-shrink: 0;
+}
+.nav-social:hover { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.85); }
+.nav.scrolled .nav-social { border-color: rgba(26,32,53,0.18); color: rgba(26,32,53,0.45); }
+.nav.scrolled .nav-social:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 900px) { .nav-socials { display: none; } }
+
+/* ── MOBILE MENU SOCIALS ─────────────────────────────────────────────── */
+.mob-socials {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 1.5rem 2rem 0.5rem;
+  border-top: 1px solid rgba(238,242,250,0.07);
+  margin-top: 0.5rem;
+}
+
+/* ── REFERENCE SHOWCASE SLIDER ───────────────────────────────────────── */
+.showcase {
+  background: var(--bg2);
+  padding-block: 6rem;
+  overflow: hidden;
+}
+.showcase-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.showcase-header .title { color: var(--text); }
+.showcase-outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.showcase-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(238,242,250,0.12);
+  background: transparent;
+  color: rgba(238,242,250,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+  z-index: 2;
+  position: relative;
+}
+.showcase-arrow:hover { border-color: var(--gold); color: var(--gold); background: rgba(196,144,53,0.06); }
+.showcase-arrow--prev { margin-left: max(1rem, calc(50% - 560px)); }
+.showcase-arrow--next { margin-right: max(1rem, calc(50% - 560px)); }
+.showcase-viewport {
+  flex: 1;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-block: 2rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+.showcase-viewport::-webkit-scrollbar { display: none; }
+.showcase-track {
+  display: flex;
+  gap: 1.5rem;
+  padding-inline: calc(50% - 155px);
+  width: max-content;
+}
+.showcase-card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 310px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2.25rem 2rem;
+  opacity: 0.42;
+  transform: scale(0.88);
+  transition: opacity .45s var(--ease), transform .45s var(--ease), border-color .3s, box-shadow .3s;
+  cursor: pointer;
+}
+.showcase-card.active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: rgba(196,144,53,0.35);
+  box-shadow: 0 0 40px rgba(196,144,53,0.08), 0 8px 32px rgba(0,0,0,0.25);
+}
+.showcase-card.adj-prev,
+.showcase-card.adj-next { opacity: 0.68; transform: scale(0.93); }
+.showcase-num {
+  display: block;
+  font-family: var(--fd);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+.showcase-title {
+  font-family: var(--fd);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.65rem;
+}
+.showcase-sub {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.showcase-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.showcase-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(238,242,250,0.18);
+  cursor: pointer;
+  transition: background .25s, transform .25s;
+  padding: 0;
+}
+.showcase-dot.active { background: var(--gold); transform: scale(1.4); }
+@media (max-width: 600px) {
+  .showcase-card { width: min(280px, 75vw); padding: 1.75rem 1.5rem; }
+  .showcase-arrow--prev { margin-left: 0.5rem; }
+  .showcase-arrow--next { margin-right: 0.5rem; }
+}
+
+/* ── PROCESS SECTION ─────────────────────────────────────────────────── */
+.prozess {
+  background: var(--light);
+  padding-block: 7rem;
+}
+.prozess .title { color: var(--text-d); }
+.prozess .label::before { background: var(--gold); }
+.prozess-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+  position: relative;
+}
+.prozess-steps::before {
+  content: '';
+  position: absolute;
+  top: 0.55rem;
+  left: calc(100% / 8);
+  right: calc(100% / 8);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(196,144,53,0.3) 20%, rgba(196,144,53,0.3) 80%, transparent);
+  pointer-events: none;
+}
+.prozess-step {
+  padding: 0 1.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.prozess-num {
+  font-family: var(--fd);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 1.35rem;
+  background: var(--light);
+  padding-right: 0.75rem;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: fit-content;
+}
+.prozess-title {
+  font-family: var(--fd);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--text-d);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+.prozess-desc {
+  font-size: 0.86rem;
+  color: var(--muted-d);
+  line-height: 1.75;
+}
+@media (max-width: 768px) {
+  .prozess-steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .prozess-steps::before { display: none; }
+  .prozess-step { padding: 0; padding-left: 1rem; border-left: 2px solid rgba(196,144,53,0.25); }
+  .prozess-num { background: transparent; }
+}

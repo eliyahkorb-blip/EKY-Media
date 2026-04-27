@@ -878,7 +878,7 @@ html.hc .demo-gmb { filter:none; }
 /* Viewport */
 .port-viewport { overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;width:100%;padding-block:2.5rem;mask-image:linear-gradient(to right,transparent,black 9%,black 91%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 9%,black 91%,transparent); }
 .port-viewport::-webkit-scrollbar { display:none; }
-.port-track { display:flex;gap:2rem;padding-inline:max(2rem,calc(50% - 340px)); }
+.port-track { display:flex;gap:2rem;padding-inline:max(2rem,calc(50% - 340px));width:max-content; }
 
 /* Cards */
 .port-card { flex-shrink:0;width:min(680px,78vw);scroll-snap-align:center;border-radius:12px;overflow:hidden;background:var(--bg2);border:1px solid var(--border);transition:opacity .4s var(--ease),transform .45s var(--ease),box-shadow .4s;opacity:.35;transform:scale(0.88);cursor:default; }

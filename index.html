@@ -1145,7 +1145,7 @@ requestAnimationFrame(() => {
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
 
-  goTo(0);
+  requestAnimationFrame(() => goTo(0));
 })();
 
 // ── FAQ ACCORDION ────────────────────────────

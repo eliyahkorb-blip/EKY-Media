@@ -199,10 +199,11 @@ button { font-family: var(--fb); }
 /* ── PRICING ── */
 .pricing { background:var(--light2);padding-block:7rem; }
 .price-toggle-wrap { display:flex;align-items:center;justify-content:center;gap:1rem;margin:2.5rem 0 3rem; }
-.price-toggle { position:relative;display:flex;align-items:center;background:var(--bg3);border:1px solid rgba(238,242,250,0.1);border-radius:99px;padding:4px;gap:0; }
-.price-toggle-opt { position:relative;z-index:1;padding:.65rem 1.75rem;border-radius:99px;font-size:.8rem;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:color .25s;color:rgba(255,255,255,.72);white-space:nowrap; }
-.price-toggle-opt.active { color:#fff; }
-.price-toggle-pill { position:absolute;top:4px;left:4px;height:calc(100% - 8px);border-radius:99px;background:var(--gold);box-shadow:0 2px 14px rgba(200,161,74,0.28);transition:transform .35s var(--ease),width .35s var(--ease); }
+.price-toggle { position:relative;display:flex;align-items:center;background:#0B1426;border:1px solid rgba(200,161,74,.35);border-radius:999px;padding:4px;gap:0;overflow:hidden; }
+.price-toggle-opt { position:relative;z-index:2;flex:1;padding:.9rem 2.2rem;background:transparent !important;border:none !important;border-radius:999px;font-size:.8rem;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:color .25s;color:rgba(255,255,255,.72);white-space:nowrap; }
+.price-toggle-opt::before,.price-toggle-opt::after { display:none !important; }
+.price-toggle-opt.active { background:transparent !important;color:#fff;font-weight:600; }
+.price-toggle-pill { position:absolute;top:4px;left:4px;height:calc(100% - 8px);border-radius:999px;background:linear-gradient(135deg,#C8A14A 0%,#B8862B 100%);box-shadow:0 4px 14px rgba(200,161,74,.28);z-index:1;transition:transform .35s var(--ease),width .35s var(--ease); }
 .pricing-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:start; }
 .p-card { background:#fff;border:1px solid var(--border-d);border-radius:6px;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.5rem;position:relative;transition:box-shadow .25s,transform .25s var(--ease); }
 .p-card:hover { box-shadow:0 12px 40px rgba(26,32,53,.1);transform:translateY(-3px); }

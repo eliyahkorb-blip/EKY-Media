@@ -97,7 +97,7 @@
             "name": "Was kostet eine Website bei EKY Media?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Das Starter-Paket beginnt bei 2.200 € einmalig oder 0 € Einstieg mit 250 €/Monat."
+              "text": "Das Basic-Paket beginnt bei 2.200 € einmalig oder 0 € Startinvestition mit 250 €/Monat."
             }
           },
           {
@@ -121,6 +121,30 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <style>
+    .pkg-overlay{position:fixed;inset:0;z-index:700;display:flex;align-items:center;justify-content:center;padding:1.5rem;pointer-events:none;opacity:0;transition:opacity .3s var(--ease);}
+    .pkg-overlay.open{pointer-events:all;opacity:1;}
+    .pkg-overlay-back{position:absolute;inset:0;background:rgba(11,20,38,.78);backdrop-filter:blur(6px);}
+    .pkg-overlay-panel{position:relative;background:var(--bg);border:1px solid var(--border-g);border-radius:10px;width:100%;max-width:660px;max-height:90vh;overflow-y:auto;padding:3rem 2.75rem 2.5rem;transform:translateY(24px);transition:transform .35s var(--ease);}
+    .pkg-overlay.open .pkg-overlay-panel{transform:translateY(0);}
+    .pkg-close{position:sticky;top:0;float:right;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--text);font-size:1.25rem;cursor:pointer;line-height:1;transition:background .2s;}
+    .pkg-close:hover{background:rgba(200,161,74,.12);}
+    .pkg-name{font-family:var(--fd);font-size:2.2rem;font-weight:600;color:var(--text);margin-bottom:.35rem;}
+    .pkg-pos{font-size:.9rem;color:var(--gold-hi);line-height:1.65;margin-bottom:1.75rem;}
+    .pkg-section{margin-bottom:1.5rem;}
+    .pkg-section-title{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,161,74,.7);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid rgba(200,161,74,.15);}
+    .pkg-section ul{list-style:none;display:flex;flex-direction:column;gap:.35rem;padding:0;}
+    .pkg-section ul li{font-size:.84rem;color:rgba(238,242,250,.72);line-height:1.6;padding-left:1.1rem;position:relative;}
+    .pkg-section ul li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+    .pkg-upgrade{background:rgba(200,161,74,.06);border:1px solid rgba(200,161,74,.18);border-radius:6px;padding:1rem 1.25rem;font-size:.82rem;color:rgba(238,242,250,.6);line-height:1.65;margin-top:1.5rem;}
+    .pkg-cta-wrap{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+    .pkg-cta-wrap .btn{width:100%;justify-content:center;text-align:center;}
+    .p-btn-detail{width:100%;margin-top:.55rem;font-size:.82rem;padding:.55rem 1rem;background:transparent;border:1px solid rgba(26,32,53,.2);color:rgba(26,32,53,.45);border-radius:4px;cursor:pointer;transition:border-color .2s,color .2s;font-family:var(--fb);}
+    .p-btn-detail:hover{border-color:var(--gold);color:var(--gold);}
+    .p-dark .p-btn-detail{border-color:rgba(238,242,250,.15);color:rgba(238,242,250,.4);}
+    .p-dark .p-btn-detail:hover{border-color:var(--gold);color:var(--gold);}
+    @media(max-width:600px){.pkg-overlay-panel{padding:2rem 1.25rem;max-height:95vh;}.pkg-overlay{padding:.75rem;}}
+  </style>
 </head>
 <body>
 
@@ -573,7 +597,7 @@
         </div>
         <ul class="cmp-list" role="list">
           <li><span class="cmp-mark cmp-good">✓</span>Max. 24 Monate oder monatlich kündbar nach Kauf</li>
-          <li><span class="cmp-mark cmp-good">✓</span>0 EUR Einstieg möglich</li>
+          <li><span class="cmp-mark cmp-good">✓</span>0 € Startinvestition möglich</li>
           <li><span class="cmp-mark cmp-good">✓</span>KI-Chatbot, KI-Angebotsschreiber, Voice Agent</li>
           <li><span class="cmp-mark cmp-good">✓</span>24/7 Erreichbarkeit durch KI-Systeme</li>
           <li><span class="cmp-mark cmp-good">✓</span>Transparente Preise</li>
@@ -684,6 +708,7 @@
           <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
         </div>
         <a href="#erstgespraech" class="btn btn-ghost-d p-btn">Jetzt anfragen</a>
+        <button class="p-btn-detail" data-pkg="basic">Mehr erfahren</button>
       </div>
 
       <!-- PROFESSIONAL (featured) -->
@@ -707,6 +732,7 @@
           <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
         </div>
         <a href="#erstgespraech" class="btn btn-gold p-btn">Jetzt anfragen</a>
+        <button class="p-btn-detail" data-pkg="professional">Mehr erfahren</button>
       </div>
 
       <!-- PREMIUM -->
@@ -729,6 +755,7 @@
           <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
         </div>
         <a href="#erstgespraech" class="btn btn-ghost-d p-btn">Jetzt anfragen</a>
+        <button class="p-btn-detail" data-pkg="premium">Mehr erfahren</button>
       </div>
 
       <!-- ALL-IN-ONE -->
@@ -752,6 +779,7 @@
           <span class="p-price-note" data-kauf="monatlich kündbar nach Einrichtung" data-laufzeit="24 Monate, danach monatlich kündbar">monatlich kündbar nach Einrichtung</span>
         </div>
         <a href="#erstgespraech" class="btn btn-gold p-btn">Jetzt anfragen</a>
+        <button class="p-btn-detail" data-pkg="allinone">Mehr erfahren</button>
       </div>
     </div>
 
@@ -877,7 +905,7 @@
     <h2 class="title title-d reveal reveal-d1" id="faq-h2">Alles was Sie<br/><em>wissen müssen.</em></h2>
     <dl class="faq-list" id="faqList" style="margin-top:3rem;">
       <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp1">Wie lange läuft ein Vertrag bei EKY Media?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp1" hidden><p>Beim Kauf-Modell gibt es nach dem einmaligen Setup keine Mindestlaufzeit – die monatliche Pauschale ist jederzeit kündbar. Beim Laufzeit-Modell gilt eine Mindestlaufzeit von 24 Monaten, danach monatlich kündbar ohne automatische Verlängerung.</p></dd></div>
-      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp2">Was kostet eine Website bei EKY Media wirklich?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp2" hidden><p>Das Starter-Paket beginnt bei 2.200 € einmalig oder 0 € Startinvestition mit 250 €/Monat. Alle Preise sind transparent – keine versteckten Kosten.</p></dd></div>
+      <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp2">Was kostet eine Website bei EKY Media wirklich?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp2" hidden><p>Das Basic-Paket beginnt bei 2.200 € einmalig oder 0 € Startinvestition mit 250 €/Monat. Alle Preise sind transparent – keine versteckten Kosten.</p></dd></div>
       <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp3">Wie lange dauert die Umsetzung?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp3" hidden><p>In der Regel 2–3 Wochen nach Freigabe aller Inhalte.</p></dd></div>
       <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp4">Was ist ein KI Voice Agent?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp4" hidden><p>Ein KI-System, das Anrufe entgegennimmt, Fragen beantwortet und Termine bucht – 24/7 automatisiert. Kein Mitarbeiter nötig, keine Wartezeiten.</p></dd></div>
       <div class="faq-item"><dt><button class="faq-trigger" aria-expanded="false" aria-controls="fp5">Kann ich später upgraden?<span class="faq-arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></button></dt><dd class="faq-panel" id="fp5" hidden><p>Ja, alle Leistungen sind modular erweiterbar.</p></dd></div>
@@ -955,6 +983,15 @@
   </div>
 </div>
 
+<!-- PACKAGE OVERLAY -->
+<div id="pkgOverlay" class="pkg-overlay" role="dialog" aria-modal="true" aria-label="Paket Details">
+  <div class="pkg-overlay-back" id="pkgBack"></div>
+  <div class="pkg-overlay-panel" id="pkgPanel">
+    <button class="pkg-close" id="pkgClose" aria-label="Schließen">×</button>
+    <div id="pkgContent"></div>
+  </div>
+</div>
+
 <!-- WhatsApp -->
 <a href="https://wa.me/4916092647414" class="wa-btn" aria-label="WhatsApp Kontakt" target="_blank" rel="noopener noreferrer">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -966,6 +1003,9 @@
 <script>
 (function(){
 'use strict';
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash || location.hash === '#') window.scrollTo(0, 0);
 
 // ── WAVEFORM BARS ────────────────────────────
 const wf = document.getElementById('waveform');
@@ -1078,7 +1118,8 @@ requestAnimationFrame(() => {
       c.classList.toggle('adj-prev', i === current - 1);
       c.classList.toggle('adj-next', i === current + 1);
     });
-    cards[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    const _tl = cards[current].offsetLeft - (vp.offsetWidth - cards[current].offsetWidth) / 2;
+    vp.scrollTo({ left: Math.max(0, _tl), behavior: 'smooth' });
     dotsWrap.querySelectorAll('.port-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
@@ -1579,6 +1620,70 @@ contBtn.addEventListener('click', () => {
 
   goTo(0);
 })();
+
+// ── PACKAGE OVERLAY ──────────────────────────
+const PKG_DATA = {
+  basic: {
+    name:'Basic', tagline:'Starker Einstieg in Ihre digitale Präsenz.',
+    sections:[
+      {title:'Was enthalten ist', items:['Moderne, individuelle Website (handgeschrieben – kein Baukasten)','SEO-Basisoptimierung (On-Page)','Google-Unternehmensprofil – Einrichtung & Optimierung','Saubere Conversion-Struktur','Mobile-first & vollständig responsive','DSGVO-konforme Implementierung']},
+      {title:'Preismodelle', items:['Kaufmodell: 2.200 € einmalig + 149 €/Monat (monatlich kündbar nach Einrichtung)','Laufzeitmodell: 0 € Startinvestition + 250 €/Monat (24 Monate Mindestlaufzeit, danach monatlich kündbar)']}
+    ],
+    upgrade:'Für KI-Chatbot, stärkere SEO und mehr Conversion-Elemente empfehlen wir das Professional-Paket.'
+  },
+  professional: {
+    name:'Professional', tagline:'Der klare Vorsprung vor Ihren Mitbewerbern.',
+    sections:[
+      {title:'Was enthalten ist', items:['Hochwertigere, individuellere Website (erweiterte Seitenstruktur)','Stärkere SEO-Optimierung + GEO-Grundlage','KI-Chatbot (24/7 Leadqualifizierung & Terminbuchung)','Verbesserte Conversion-Elemente & Struktur','Google Business – laufende Pflege & monatliches Reporting','Persönlicher Ansprechpartner']},
+      {title:'Preismodelle', items:['Kaufmodell: 4.500 € einmalig + 199 €/Monat (monatlich kündbar nach Einrichtung)','Laufzeitmodell: 0 € Startinvestition + 390 €/Monat (24 Monate Mindestlaufzeit, danach monatlich kündbar)']}
+    ],
+    upgrade:'Professional ist unser meistgewähltes Paket. Für Unternehmensvideo und maximale Markenwirkung: Premium.'
+  },
+  premium: {
+    name:'Premium', tagline:'Maximale Wirkung. Starke Positionierung.',
+    sections:[
+      {title:'Was enthalten ist', items:['Alles aus Professional','Unternehmensvideo (Basis-Produktion vor Ort)','Stärkere Markenwirkung & Positionierung','Höherwertigeres Design & Gestaltung','Mehr Individualisierung & inhaltliche Tiefe','Erweiterte SEO- & GEO-Optimierung']},
+      {title:'Preismodelle', items:['Kaufmodell: 9.000 € einmalig + 299 €/Monat (monatlich kündbar nach Einrichtung)','Laufzeitmodell: 0 € Startinvestition + 720 €/Monat (24 Monate Mindestlaufzeit, danach monatlich kündbar)']}
+    ],
+    upgrade:'Für vollständige Außendarstellung mit hochwertigem Imagevideo und 3 Designanpassungen pro Jahr: All-in-One.'
+  },
+  allinone: {
+    name:'All-in-One', tagline:'Vollständige Außendarstellung. Alles aus einer Hand.',
+    sections:[
+      {title:'Was enthalten ist', items:['Alles aus Premium','Hochwertiges Unternehmensvideo (professionelle Produktion)','3 Design-Anpassungen pro Jahr','Maximale Individualisierung','Stärkste SEO- & GEO-Ausrichtung','Fokus auf nachhaltiges Wachstum & Performance']},
+      {title:'Preismodelle', items:['Kaufmodell: 14.000 € einmalig + 399 €/Monat (monatlich kündbar nach Einrichtung)','Laufzeitmodell: 0 € Startinvestition + 1.050 €/Monat (24 Monate Mindestlaufzeit, danach monatlich kündbar)']}
+    ],
+    upgrade:'Das vollständigste Paket. Für individuelle Erweiterungen jenseits dieses Umfangs – sprechen Sie uns direkt an.'
+  }
+};
+
+function openPkg(key) {
+  const d = PKG_DATA[key]; if (!d) return;
+  document.getElementById('pkgContent').innerHTML =
+    `<p class="pkg-name">${d.name}</p><p class="pkg-pos">${d.tagline}</p>` +
+    d.sections.map(s =>
+      `<div class="pkg-section"><p class="pkg-section-title">${s.title}</p><ul>${s.items.map(it => `<li>${it}</li>`).join('')}</ul></div>`
+    ).join('') +
+    (d.upgrade ? `<div class="pkg-upgrade">${d.upgrade}</div>` : '') +
+    `<div class="pkg-cta-wrap"><a href="#erstgespraech" class="btn btn-gold pkg-cta-link">Kostenfreie Potenzialanalyse anfragen</a></div>`;
+  const ov = document.getElementById('pkgOverlay');
+  ov.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePkg() {
+  document.getElementById('pkgOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('pkgBack')?.addEventListener('click', closePkg);
+document.getElementById('pkgClose')?.addEventListener('click', closePkg);
+document.getElementById('pkgOverlay')?.addEventListener('click', e => {
+  if (e.target.closest('.pkg-cta-link')) closePkg();
+});
+document.querySelectorAll('[data-pkg]').forEach(btn => {
+  btn.addEventListener('click', () => openPkg(btn.dataset.pkg));
+});
 
 // ── COOKIE CONSENT ───────────────────────────
 const cookieBanner = document.getElementById('cookieBanner');

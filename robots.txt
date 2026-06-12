@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /cdn-cgi/
-
-Sitemap: https://ekymedia.de/sitemap.xml
+Disallow: /
